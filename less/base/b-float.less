@@ -11,47 +11,72 @@
     }
 }
 
-.b-fl-l {
+.fl-l {
     float: left;
 }
 
-.b-fl-r {
+.fl-r {
     float: right;
 }
 
-.b-float {
+/* .b-float_all() {
 
     &:extend(.clfx all);
 
     & > * {
-
-        &:extend(.b-fl-l);
+        float: left;
     }
-}
-   
+} */
 
-.b-float-r {
+.b-float() {
 
     &:extend(.clfx all);
 
-    & > * {
-
-        &:extend(.b-fl-r);
+    & > .item {
+        float: left;
     }
-}
-   
+}   
 
-.b-float-justify {
+/* .b-float-r_all() {
+   
+       &:extend(.clfx all);
+   
+       & > * {
+           float: right;
+       }
+   } */   
+
+.b-float-r() {
 
     &:extend(.clfx all);
 
-    & > *:first-child {
+    & > .item {
+        float: right;
+    }
+}   
 
-        &:extend(.b-fl-l);
+/* .b-float-justify_all() {
+  
+      &:extend(.clfx all);
+  
+      & > * {
+          float: left;
+      }
+  
+      & > * + *:last-child {
+          float: right;
+      }
+}  */  
+
+.b-float-justify() {
+
+    &:extend(.clfx all);
+
+    & > .item {
+        float: left;
     }
 
-    & > *:last-child:not(:first-child) {
-
-        &:extend(.b-fl-r);
+    & > .item + .item:last-child {
+        float: right;
     }
 }

@@ -30,7 +30,7 @@
     text-transform: capitalize;
 }
 
-.text-direction {
+/* .text-direction_all() {
 
     & > *:first-child {
         text-align: left;
@@ -40,8 +40,19 @@
         text-align: right;
     }
 }
+ */
+.text-direction() {
 
-.text-ellipsis {
+    & > .item:first-child {
+        text-align: left;
+    }
+
+    & > .item:last-child {
+        text-align: right;
+    }
+}
+
+.text-ellipsis() {
     display: block;
     
     overflow: hidden;
@@ -50,7 +61,7 @@
     white-space: nowrap;
 }
 
-.text-clip {
+.text-clip() {
     display: block;
     
     overflow: hidden;
