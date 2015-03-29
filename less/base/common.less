@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    min-width: @w-min;
+
+    background-color: @bg-body;
+
+    color: @c-text-base;
+    font: @font-size-body ~"/" @line-height-base @font-family-base;
+    font-weight: @headings-font-weight;
+}

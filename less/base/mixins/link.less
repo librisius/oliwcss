@@ -1,0 +1,14 @@
+.link-variant(@c-link; @brd-c-link; @c-link_hover; @brd-c-link_hover) {
+	border-bottom: @brd_w-link solid @brd-c-link;
+
+	color: @c-link;
+
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		border-bottom-color: @brd-c-link_hover;
+
+		color: @c-link_hover;
+	}
+}

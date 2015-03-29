@@ -1,0 +1,149 @@
+/*----------- main -----------*/
+
+@black:							 #000;
+@gray-base:						 @black;
+@gray-darker:					 lighten(@gray-base, 13.5%); // #222
+@gray-dark:						 lighten(@gray-base, 20%);   // #333
+@gray:							 lighten(@gray-base, 33.5%); // #555
+@gray-light:					 lighten(@gray-base, 46.7%); // #777
+@gray-lighter:					 lighten(@gray-base, 93.5%); // #eee
+@white:							 #fff;
+
+@brand-primary:					 darken(#428bca, 6.5%); // blue
+@brand-success:					 #5cb85c; // green
+@brand-info:					 #5bc0de; // cyan
+@brand-warning:					 #f0ad4e; // yellow
+@brand-danger:					 #d9534f; // red
+
+/*----------- main -----------*/
+
+
+
+
+
+/*----------- typography -----------*/
+
+@c-text-base:					@black;
+@c-h:							@black;
+
+/*----------- typography (end) -----------*/
+
+
+
+
+
+/*----------- common -----------*/
+
+@bg-body:						@white;
+
+/*----------- common (end) -----------*/
+
+
+
+
+
+/*----------- hr -----------*/
+
+@bg-hr:							rgb(237,237,237);
+
+/*----------- hr (end) -----------*/
+
+
+
+
+
+/*----------- link -----------*/
+
+@c-link:						   @brand-primary;
+@brd-c-link:					   transparent;
+@c-link_hover:					   darken(@c-link, 10%);
+@brd-c-link_hover:				   @c-link_hover;
+
+/*----------- link (end) -----------*/
+
+
+
+
+
+/*----------- form -----------*/
+
+@c-label: 						   @c-text-base;
+@c-label__span: 				   @c-text-base;
+
+@bg-input: 						   @white;
+@brd_c-input:					   @gray-light;
+@c-input: 						   @c-text-base;
+@placeholder:					   @c-h;
+
+@bg-checkbox: 					   @white;
+@brd_c-checkbox: 				   @gray-light;
+@brd_c-checkbox_focused:		   darken(@gray-light, 20%);
+@bg-checkbox__child:			   @white;
+@bg-checkbox_checked:			   @brand-success;
+@brd_c-checkbox_checked:		   @brand-success;
+
+@brd_c-radio:					   @gray-light;
+@brd_c-radio_focused:			   darken(@gray-light, 20%);
+@brd_c-radio_checked:			   @brand-success;
+@bg-radio_checked:				   @brand-success;
+@bg-radio__child:				   @white;
+
+@c-selectbox__li:				   @gray-darker;
+@bg-selectbox__li_selected:		   @gray-dark;
+@c-selectbox__li_selected:		   @white;
+@bg-selectbox__li_hover:		   @gray;
+@c-selectbox__li_hover:			   @white;
+@c-selectbox__search:			   @gray;
+@bg-selectbox__not-found:		   @gray-light;
+@brd_c-selectbox-multiple:		   @gray-light;
+@brd_c-selectbox-multiple:		   @gray-dark;
+@brd_c-selectbox-multiple_focused: @brand-primary;
+
+/*----------- form (end) -----------*/
+
+
+
+
+
+/*----------- table -----------*/
+
+@table_even:					   rgb(250,250,250);
+@table_odd:						   rgb(250,250,250);
+
+@table_hr:						   darken(@white, 8%);
+
+/*----------- table (end) -----------*/
+
+
+
+
+
+/*----------- button -----------*/
+
+@c-btn:							   @brand-primary;
+@c-btn_hover:					   @brand-primary;
+@c-btn_active:					   @brand-primary;
+@c-btn-link:					   @brand-primary;
+@c-btn-link_hover:				   @c-btn-link;
+@c-btn-outline:					   @brand-primary;
+@c-btn-outline__hover:			   @white;
+@c-btn-default:					   @black;
+@c-btn-filled:					   @white;
+@c-btn-disable:					   @white;
+
+@bg-btn-default:				   rgba(0, 0, 0, 0);
+@bg-btn-primary:				   @brand-primary;
+@bg-btn-success:				   @brand-success;
+@bg-btn-info:					   @brand-info;
+@bg-btn-warning:				   @brand-warning;
+@bg-btn-danger:					   @brand-danger;
+@bg-btn-disable:				   darken(@white, 20%);
+
+@brd-btn:						   @c-btn;
+@brd-btn_hover:					   @brd-btn;
+@brd-btn_active:				   @brd-btn;
+@brd-btn-default-filled:		   @black;
+@brd-c-btn-link:				   transparent;
+@brd-c-btn-link_hover:			   fadeout(@c-btn-link, 20%);
+
+/*----------- button (end) -----------*/

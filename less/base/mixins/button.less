@@ -1,0 +1,102 @@
+.btn-variant(@c-btn; @c-btn_hover) {
+
+	@brd-btn: @c-btn;
+
+	border-color: @brd-btn;
+
+	background-color: transparent;
+
+	color: @c-btn;
+
+	&:hover,
+	&:focus {
+		border-color: @brd-btn;
+
+		background-color: @c-btn;
+
+		color: @c-btn_hover;
+	}
+
+	&:active {
+		opacity: .8;
+	}
+}
+
+.btn-default-variant(@c-btn; @bg-btn; @per-hover; @per-active; @brd_c-btn: @c-btn) {
+
+	border-color: @brd_c-btn;
+
+	background-color: @bg-btn;
+
+	color: @c-btn;
+
+	&:hover,
+	&:focus {
+		border-color: fadein(@brd_c-btn, @per-hover);
+
+		background-color: fadein(@bg-btn, @per-hover);
+
+		color: @c-btn;
+	}
+
+	&:active {
+		border-color: fadein(@brd_c-btn, @per-hover + @per-active);
+		
+		background-color: fadein(@bg-btn, @per-hover + @per-active);
+	}
+}
+
+.btn-link(@brd-b-c-btn, @c-btn, @brd-b-c-btn_hover, @c-btn_hover) {
+
+	border-color: transparent;
+	border-bottom: 1px solid @brd-b-c-btn;
+
+	color: @c-btn;
+
+	&:hover,
+	&:focus {
+		border-bottom-color: @brd-b-c-btn_hover;
+
+		color: @c-btn_hover;
+	}
+}
+
+.btn-filled-variant(@c-btn; @bg-btn; @per-brd; @per-hover; @per-active) {
+
+	@brd-btn: darken(@bg-btn, @per-brd);
+
+	border-color: @brd-btn;
+
+	background-color: @bg-btn;
+
+	color: @c-btn;
+
+	&:hover,
+	&:focus {
+		border-color: lighten(@brd-btn, @per-hover);
+
+		background-color: lighten(@bg-btn, @per-hover);
+
+		color: @c-btn;
+	}
+
+	&:active {
+		border-color: darken(@brd-btn, @per-active);
+		
+		background-color: darken(@bg-btn, @per-active);
+
+		color: @c-btn;
+	}
+}
+
+// Button sizes
+.button-size(@w-btn; @h-btn; @brd_rd-btn; @pd_vert-btn; @pd_horiz-btn; @fsz-btn; @lh-btn) {
+  width: @w-btn;
+  height: @h-btn;
+
+  border-radius: @brd_rd-btn;
+  padding: @pd_vert-btn @pd_horiz-btn;
+
+  font-size: @fsz-btn;
+  line-height: @lh-btn;
+}

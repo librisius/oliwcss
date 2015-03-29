@@ -1,0 +1,57 @@
+.clfx {
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+.b-fl-l {
+    float: left;
+}
+
+.b-fl-r {
+    float: right;
+}
+
+.b-float {
+
+    &:extend(.clfx all);
+
+    & > * {
+
+        &:extend(.b-fl-l);
+    }
+}
+   
+
+.b-float-r {
+
+    &:extend(.clfx all);
+
+    & > * {
+
+        &:extend(.b-fl-r);
+    }
+}
+   
+
+.b-float-justify {
+
+    &:extend(.clfx all);
+
+    & > *:first-child {
+
+        &:extend(.b-fl-l);
+    }
+
+    & > *:last-child:not(:first-child) {
+
+        &:extend(.b-fl-r);
+    }
+}

@@ -1,0 +1,159 @@
+.content .btn,
+.btn {
+	display: inline-block;
+
+	height: @h-btn;
+
+	margin-bottom: 0; // For input.btn
+	border: 1px solid @brd-btn;
+
+	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	background-color: rgba(255, 255, 255, 0);
+
+	color: @c-btn;
+	font-weight: @headings-font-weight;
+	line-height: 1;
+
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+
+	cursor: pointer;
+	touch-action: manipulation;
+
+	.button-size(@w-btn; @h-btn; @brd_rd-btn; @pd_vert-btn; @pd_horiz-btn; @fsz-btn; @lh-btn);
+
+	&:hover,
+	&:focus {
+		border-color: @brd-btn_hover;
+
+		color: @c-btn_hover;
+	}
+
+	&:active {
+		border-color: @brd-btn_active;
+
+		color: @c-btn_active;
+	}
+
+	&.disable,
+	&[disable] {
+
+		.btn-filled-variant(@c-btn-disable; @bg-btn-disable; @per-brd-btn; @per-btn_hover; @per-btn_active);
+
+		cursor: ~'not-allowed';
+		pointer-events: none; // Future-proof disabling of clicks
+	}
+}
+
+.content .btn-link,
+.btn-link {
+	width: auto;
+	height: auto;
+
+	border: 0;
+	border-radius: 0;
+	padding: 0;
+
+	&:extend(.btn all);
+
+	.btn-link(@brd-c-btn-link; @c-btn-link; @brd-c-btn-link_hover; @c-btn-link_hover);
+}
+
+.content .btn-outline,
+.btn-outline {
+
+	&:extend(.btn all);
+
+	.btn-variant(@c-btn-outline; @c-btn-outline__hover);
+}
+
+.content .btn-default,
+.btn-default {
+
+	&:extend(.btn all);
+
+	.btn-default-variant(@c-btn-default; @bg-btn-default; @per-btn_hover; @per-btn_active);
+}
+
+.content .btn-primary,
+.btn-primary {
+
+	&:extend(.btn all);
+
+	.btn-filled-variant(@c-btn-filled; @bg-btn-primary; @per-brd-btn; @per-btn_hover; @per-btn_active);
+}
+
+.content .btn-success,
+.btn-success {
+	
+	&:extend(.btn all);
+
+	.btn-filled-variant(@c-btn-filled; @bg-btn-success; @per-brd-btn; @per-btn_hover; @per-btn_active);
+}
+
+.content .btn-info,
+.btn-info {
+
+	&:extend(.btn all);
+
+	.btn-filled-variant(@c-btn-filled; @bg-btn-info; @per-brd-btn; @per-btn_hover; @per-btn_active);
+}
+
+.content .btn-warning,
+.btn-warning {
+
+	&:extend(.btn all);
+
+	.btn-filled-variant(@c-btn-filled; @bg-btn-warning; @per-brd-btn; @per-btn_hover; @per-btn_active);
+}
+
+.content .btn-danger,
+.btn-danger {
+
+	&:extend(.btn all);
+
+	.btn-filled-variant(@c-btn-filled; @bg-btn-danger; @per-brd-btn; @per-btn_hover; @per-btn_active);
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+
+	.button-size(@w-btn_lg; @h-btn_lg; @brd_rd-btn_lg; @pd_vert-btn_lg; @pd_horiz-btn_lg; @fsz-btn_lg; @lh-btn_lg);
+}
+.btn-sm {
+
+	.button-size(@w-btn_sm; @h-btn_sm; @brd_rd-btn_sm; @pd_vert-btn_sm; @pd_horiz-btn_sm; @fsz-btn_sm; @lh-btn_sm);
+}
+.btn-xs {
+
+	.button-size(@w-btn_xs; @h-btn_xs; @brd_rd-btn_xs; @pd_vert-btn_xs; @pd_horiz-btn_xs; @fsz-btn_xs; @lh-btn_xs);
+}
+
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+	display: block;
+	width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+	margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+
+	&.btn-block {
+		width: 100%;
+	}
+}
+

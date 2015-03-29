@@ -1,0 +1,39 @@
+.img-wrap(@w, @h: @w, @round: 0) {
+    
+    width: @w;
+    height: @h;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: @round;
+
+    img {
+        display: block;
+        
+        width: 100%;
+        height: auto;
+    }
+}
+
+.img-strech(@strech) when (@strech = vert) {
+
+    img {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.img-strech(@strech) when (@strech = horiz) {
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.sprite(@bg-p) {
+    background-repeat: no-repeat;
+    background-position: @bg-p;
+}

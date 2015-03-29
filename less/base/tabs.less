@@ -1,0 +1,25 @@
+.tab-dl {
+    width: 100%;
+
+    &:extend(.clfx all);
+
+    dt {
+        &:extend(.l all);
+    }
+
+    dd {
+        display: none;
+
+        width: 100%;
+
+        margin: 2em 0 0 -100%;
+        position: relative;
+        z-index: 2;
+
+        &:extend(.r all);
+
+        &.active {
+            display: block;
+        }
+    }
+}
