@@ -49,7 +49,10 @@ label {
 		margin-top: @mb-label;
 	}
 
-	& > * {
+	& > span,
+	& > div
+	& > input,
+	& > textarea  {
 		display: inline-block;
 	}
 
@@ -69,7 +72,7 @@ label {
 .row-inputs {
 	width: 100%;
 
-	&:extend(.b-float-justify all);
+	.b-float-justify(input-wrap);
 
 	.input-wrap {
 		width: @per-input_col-many;

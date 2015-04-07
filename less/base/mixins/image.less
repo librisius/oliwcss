@@ -33,7 +33,8 @@
     }
 }
 
-.sprite(@bg-p) {
+.sprite(@bg-p; @sprite: @sprite) {
+    background-image: @sprite;
     background-repeat: no-repeat;
     background-position: @bg-p;
 }

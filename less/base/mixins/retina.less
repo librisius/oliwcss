@@ -1,14 +1,16 @@
-.img-retina(@file-1x; @file-2x; @size-1x) {
-  background-image: @file-1x;
+.img-retina(@bg-p; @file-1x: @sprite; @file-2x: @sprite_x2; @size-1x: @sprite-size) {
+	background-image: @file-1x;
+	background-position: @bg-p;
+	background-repeat: no-repeat;
 
-  @media
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (   min--moz-device-pixel-ratio: 2),
-  only screen and (     -o-min-device-pixel-ratio: 2/1),
-  only screen and (        min-device-pixel-ratio: 2),
-  only screen and (                min-resolution: 192dpi),
-  only screen and (                min-resolution: 2dppx) {
-    background-image: @file-2x;
-    background-size: @size-1x;
-  }
+	@media
+		only screen and (-webkit-min-device-pixel-ratio: 2),
+		only screen and (   min--moz-device-pixel-ratio: 2),
+		only screen and (     -o-min-device-pixel-ratio: 2/1),
+		only screen and (        min-device-pixel-ratio: 2),
+		only screen and (                min-resolution: 192dpi),
+		only screen and (                min-resolution: 2dppx) {
+			background-image: @file-2x;
+			background-size: @size-1x;
+	}
 }

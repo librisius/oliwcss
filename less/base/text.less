@@ -1,4 +1,4 @@
-.text-l {
+/* .text-l {
     text-align: left;
 }
 
@@ -30,29 +30,21 @@
     text-transform: capitalize;
 }
 
-/* .text-direction_all() {
+.text-direction {
 
-    & > *:first-child {
-        text-align: left;
-    }
+    & > .item {
+    
+        &:first-child {
+            text-align: left;
+        }
 
-    & > *:last-child {
-        text-align: right;
-    }
-}
- */
-.text-direction() {
-
-    & > .item:first-child {
-        text-align: left;
-    }
-
-    & > .item:last-child {
-        text-align: right;
+        &:last-child {
+            text-align: right;
+        }
     }
 }
 
-.text-ellipsis() {
+.text-ellipsis {
     display: block;
     
     overflow: hidden;
@@ -61,11 +53,11 @@
     white-space: nowrap;
 }
 
-.text-clip() {
+.text-clip {
     display: block;
     
     overflow: hidden;
 
     text-overflow: clip;
     white-space: nowrap;
-}
+} */
