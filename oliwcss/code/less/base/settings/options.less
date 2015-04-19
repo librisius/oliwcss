@@ -17,10 +17,10 @@
 @font-family-monospace:			 Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:				 @font-family-sans-serif;
 
-@font-size-base:				 14px;
 @font-size-medium:				 floor((@font-size-base * 1.15)); // ~16px
 @font-size-large:				 ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:				 ceil((@font-size-base * 0.85)); // ~12px
+@font-size-base:				 14px;
 
 @font-size-h1:					 floor((@font-size-base * 2.6)); // ~36px
 @font-size-h2:					 floor((@font-size-base * 2.15)); // ~30px
@@ -30,6 +30,7 @@
 @font-size-h6:					 ceil((@font-size-base * 0.85)); // ~12px
 
 @font-size-body:				 @font-size-base;
+@font-size-main: 				 10px;
 
 @mb-h1:							 20px;
 @mb-h2:							 15px;
@@ -55,12 +56,23 @@
 
 /*----------- common -----------*/
 
-@w-wrap:						 960px;
+@w-b-wrap:						 960px;
 
 @w-min:							 320px;
 @h-min:							 768px;
 
 /*----------- common (end) -----------*/
+
+
+
+
+
+/*----------- media -----------*/
+
+@md-tablet:					 @w-b-wrap;
+@md-mobile:					 640px;
+
+/*----------- media (end) -----------*/
 
 
 

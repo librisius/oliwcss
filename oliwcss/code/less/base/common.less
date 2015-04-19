@@ -1,18 +1,20 @@
 * {
 	box-sizing: border-box;
 }
+
 *:before,
 *:after {
 	box-sizing: border-box;
 }
 
 html {
-	font-size: 10px;
+	font-size: @font-size-main;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 body {
 	min-width: @w-min;
+	min-height: @h-min;
 
 	background-color: @bg-body;
 

@@ -33,8 +33,48 @@
     }
 }
 
-.sprite(@bg-p; @sprite: @sprite) {
+.sprite-all(@bg-p; @sprite: @sprite) {
     background-image: @sprite;
     background-repeat: no-repeat;
     background-position: @bg-p;
+}
+
+.sprite(@sprite: @sprite) {
+    background-image: @sprite;
+    background-repeat: no-repeat;
+}
+
+.pos-image(@items; @t_pos-img; @img-w; @img-space; @item-border; @element) when (isstring(@element)) {
+
+	.pos-image_loop(@items);
+
+	.pos-image_loop(@items; @counter: 0) when (@counter < @items) {
+
+		@num-li: @counter + 1;
+
+		&:nth-child(@{num-li}) {
+
+			@{element} {
+				background-position: -( (@img-w * @counter + @img-space * @counter) + @item-border ) -(@t_pos-img + @item-border);
+			}
+		}
+
+		.pos-image_loop(@items, (@counter + 1));
+	}
+}
+
+.pos-image(@items; @t_pos-img; @img-w; @img-space; @item-border;) {
+
+	.pos-image_loop(@items);
+
+	.pos-image_loop(@items; @counter: 0) when (@counter < @items) {
+
+		@num-li: @counter + 1;
+
+		&:nth-child(@{num-li}) {
+			background-position: -( (@img-w * @counter + @img-space * @counter) + @item-border ) -(@t_pos-img + @item-border);
+		}
+
+		.pos-image_loop(@items, (@counter + 1));
+	}
 }

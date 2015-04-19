@@ -1,9 +1,9 @@
-.b-vertical-mid_line(@item) {
+.b-vertical-mid_line(@item: ~'.item') {
 	//line-height
 
 	height: 100%;
 
-	& > .@{item} {
+	& > @{item} {
 		display: inline-block;
 
 		vertical-align: middle;
@@ -12,44 +12,46 @@
 	}
 }
 
-.b-vertical-mid_table(@item) {
+.b-vertical-mid_table(@w: 100%; @h: 100%; @item: ~'.item') {
 	display: table;
 
-	width: 100%;
-	height: 100%;
+	width: @w;
+	height: @h;
 
-	& > .@{item} {
+	& > @{item} {
 		display: table-cell;
 
 		vertical-align: middle;
 	}
 }
 
-.b-inline(@item) {
+.b-inline(@item: ~'.item'; @font-size: @font-size-base; @align: top) {
 	font-size: 0;
 
-	& > .@{item} {
+	& > @{item} {
 		display: inline-block;
 
-		vertical-align: top;
+		vertical-align: @align;
 
-		font-size: @font-size-base;
+		font-size: @font-size;
 	}
 }
 
-.b-justify(@item) {
+.b-justify(@item: ~'.item'; @font-size: @font-size-base; @align: top) {
 	font-size: 0;
 
 	text-align: justify;
 	text-align-last: justify; //for IE 7 - 6
 	text-justify: newspaper; // for all IE
 
-	& > .@{item} {
+	& > @{item} {
 		display: inline-block;
 
-		vertical-align: top;
+		vertical-align: @align;
 
-		font-size: @font-size-base;
+		font-size: @font-size;
+
+		text-align: left;
 	}
 
 	&:after {
@@ -61,32 +63,5 @@
 
 		visibility: hidden;
 		overflow: hidden;
-	}
-}
-
-.b-middle(@item) {
-
-	&:extend(.b-inline all);
-
-	& > .@{item} {
-		display: inline-block;
-
-		vertical-align: middle;
-	}
-}
-
-.b-top(@item) {
-
-	&:extend(.b-inline all);
-}
-
-.b-bottom(@item) {
-
-	&:extend(.b-inline all);
-
-	& > .@{item} {
-		display: inline-block;
-
-		vertical-align: bottom;
 	}
 }
