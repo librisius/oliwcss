@@ -2,7 +2,7 @@
 
     &:extend(.clfx all);
 
-    & > .@{item} {
+    & > @{item} {
         float: left;
     }
 }
@@ -11,7 +11,7 @@
 
     &:extend(.clfx all);
 
-    & > .@{item} {
+    & > @{item} {
         float: right;
     }
 }
@@ -20,11 +20,11 @@
 
     &:extend(.clfx all);
 
-    & > .@{item} {
+    & > @{item} {
         float: left;
     }
 
-    & > .@{item} + .@{item}:last-child {
+    & > @{item} + @{item}:last-child {
         float: right;
     }
 }
