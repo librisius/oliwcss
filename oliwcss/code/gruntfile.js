@@ -10,6 +10,10 @@ module.exports = function(grunt) {
         customers_less: {
           files: ['less/**/*.less'],
           tasks: ['less:customers_less', 'autoprefixer', 'cssmin']
+        },
+        customers_js: {
+          files: ['js/**/*.js'],
+          tasks: ['concat', 'uglify']
         }
     },
 
@@ -36,25 +40,26 @@ module.exports = function(grunt) {
       }
     },
 
-    // concat: {
+    concat: {
+      dist: {
+        src: 'js/**/*.js',
+        dest: 'dist/js/all.js'
+      }
+    },
 
-    //   options: {
-    //     stripBanners: true,
-    //     banner: '/*<%= pkg.name %> -v<%= pkg.version %> - <%= grunt.template.today["yyyy-mm-dd"] %>*/\n'
-    //   },
-
-    //   dist: {
-    //     src: [],
-    //     dest: 'dest/**.js'
-    //   }
-    // },
-
-    // ulglify: {
-    //   build: {
-    //     src: 'js/**/*.js',
-    //     dest: 'js/**/*min.js'
-    //   }
-    // }
+    uglify: {
+      customers_uglify: {
+        files: [
+          {
+            expand: true,
+            cwd: 'dist/js',
+            src: ['**/*.js', '!**/*.min.js'],
+            dest: 'dist/js',
+            ext: '.min.js'
+          }
+        ]
+      }
+    },
 
     less: {
       customers_less: {
@@ -73,7 +78,7 @@ module.exports = function(grunt) {
     autoprefixer: {
       options : {},
       no_dest: {
-        src: 'dist/css/**/*.css' // globbing is also possible here
+        src: ['dist/css/**/*.css', '!dist/css/**/*.min.css'] // globbing is also possible here
       }
     },
 
@@ -114,15 +119,16 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-autoprefixer');
-
   grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.loadNpmTasks('grunt-html-validation');
 
   grunt.registerTask('default', ['less', 'autoprefixer', 'cssmin']);
   grunt.registerTask('css', ['less', 'autoprefixer', 'cssmin']);
-  grunt.registerTask('js', ['jshint']);
+  grunt.registerTask('js', ['jshint', 'concat', 'uglify']);
   grunt.registerTask('valid', ['validation']);
 };

@@ -1,7 +1,7 @@
-.b-vertical-mid_line(@item: ~'.item') {
+.b-vertical-mid_line(@item: ~'.item'; @h: 100%) {
 	//line-height
 
-	height: 100%;
+	height: @h;
 
 	& > @{item} {
 		display: inline-block;
