@@ -18,7 +18,7 @@ textarea {
 	font-size: @fsz-input;
 	line-height: @h-input - @brd-input*2 - @pd_vert-input*2;
 
-	.mx_placeholder(@placeholder, transparent, ellipsis);
+	._mx_placeholder(@placeholder, transparent, ellipsis);
 }
 
 input, .input {
@@ -71,7 +71,7 @@ label {
 .row-inputs {
 	width: 100%;
 
-	.ms_justify(~'input-wrap');
+	._mx_justify(~'input-wrap');
 
 	.input-wrap {
 		width: @per-input_col-many;
