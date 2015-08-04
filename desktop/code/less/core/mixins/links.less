@@ -1,0 +1,19 @@
+.mx_link-variant(
+	@color: @c-link;
+	@border: @brd-c-link;
+	@color_hover: @c-link_hover;
+	@border_hover: @brd-c-link_hover ) {
+
+	display: inline-block;
+	border-bottom: @brd_w-link solid @border;
+
+	color: @color;
+	line-height: @lh-link;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		border-bottom-color: @border_hover;
+		color: @color_hover;
+	}
+}

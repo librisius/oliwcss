@@ -1,0 +1,34 @@
+.mx_ol(@item) {
+	counter-reset: list;
+
+	@{item} {
+
+		&:before {
+			content: '';
+		 	counter-increment: list;
+			content: counter(list) '. ';
+
+			display: inline-block;
+		}
+	}
+}
+
+.mx_ol-pos(@item; @top: 0; @left: 0) {
+	counter-reset: list;
+
+	@{item} {
+		position: relative;
+
+		&:before {
+			content: '';
+		 	counter-increment: list;
+			content: counter(list) '. ';
+
+			display: block;
+
+			position: absolute;
+			top: @top;
+			left: @left;
+		}
+	}
+}

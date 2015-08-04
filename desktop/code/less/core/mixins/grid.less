@@ -1,0 +1,8 @@
+.mx_grid(@rows; @counter: 0) when (@counter <= @rows) {
+	
+	.col-@{counter} {
+		width: (100% / @rows * @counter);
+	}
+
+	.mx_grid(@rows, (@counter + 1));
+}

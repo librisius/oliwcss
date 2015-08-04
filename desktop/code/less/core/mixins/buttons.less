@@ -1,0 +1,112 @@
+.mx_btn-variant( @c-btn;
+				 @c-btn_hover) {
+	
+	@brd-btn: @c-btn;
+
+	border-color: @brd-btn;
+	background-color: transparent;
+	color: @c-btn;
+
+	&:hover,
+	&:focus {
+		border-color: @brd-btn;
+		background-color: @c-btn;
+		color: @c-btn_hover;
+	}
+
+	&:active {
+		opacity: .8;
+	}
+}
+
+
+
+.mx_btn-default-variant( @c-btn;
+						 @bg-btn;
+						 @per-hover;
+						 @per-active;
+						 @brd_c-btn: @c-btn ) {
+
+	border-color: @brd_c-btn;
+	background-color: @bg-btn;
+	color: @c-btn;
+
+	&:hover,
+	&:focus {
+		border-color: fadein(@brd_c-btn, @per-hover);
+		background-color: fadein(@bg-btn, @per-hover);
+		color: @c-btn;
+	}
+
+	&:active {
+		border-color: fadein(@brd_c-btn, @per-hover + @per-active);
+		background-color: fadein(@bg-btn, @per-hover + @per-active);
+	}
+}
+
+
+
+.mx_btn-link( @brd-b-c-btn;
+			  @c-btn;
+			  @brd-b-c-btn_hover;
+			  @c-btn_hover ) {
+
+	border-color: transparent;
+	border-bottom: 1px solid @brd-b-c-btn;
+	color: @c-btn;
+
+	&:hover,
+	&:focus {
+		border-bottom-color: @brd-b-c-btn_hover;
+		color: @c-btn_hover;
+	}
+}
+
+
+
+.mx_btn-filled-variant( @c-btn;
+						@bg-btn;
+						@per-brd;
+						@per-hover;
+						@per-active ) {
+
+	@brd-btn: darken(@bg-btn, @per-brd);
+
+	border-color: @brd-btn;
+	background-color: @bg-btn;
+	color: @c-btn;
+
+	&:hover,
+	&:focus {
+		border-color: lighten(@brd-btn, @per-hover);
+		background-color: lighten(@bg-btn, @per-hover);
+		color: @c-btn;
+	}
+
+	&:active {
+		border-color: darken(@brd-btn, @per-active);
+		background-color: darken(@bg-btn, @per-active);
+		color: @c-btn;
+	}
+}
+
+
+
+// Button sizes
+.mx_button-size( @w-btn;
+				 @h-btn;
+				 @brd_rd-btn;
+				 @pd_vert-btn;
+				 @pd_horiz-btn;
+				 @f_sz-btn; @brd_w-btn ) {
+
+	width: @w-btn;
+	height: @h-btn;
+
+	border-radius: @brd_rd-btn;
+	border-width: @brd_w-btn;
+	padding: @pd_vert-btn @pd_horiz-btn;
+
+	font-size: @f_sz-btn;
+	line-height: @h-btn - @brd_w-btn*2;
+}

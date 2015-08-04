@@ -1,0 +1,35 @@
+* {
+	box-sizing: border-box;
+}
+
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: @font-size-main;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+	min-width: @w-min;
+	min-height: @h-min;
+
+	background-color: @bg-body;
+
+	color: @c-text-base;
+	font: @font-weight-base @font-size-body ~"/" @line-height-base @font-family-base;
+
+	overflow-x: hidden;
+
+	&.no-scroll{
+		height: 100%;
+		overflow: hidden;
+	}
+
+	// for testinng mobile version
+	&.mobile-test{
+		width: 320px;
+	}
+}

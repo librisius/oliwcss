@@ -1,0 +1,53 @@
+// Mixin for svg fonts, adds ::after to element (pos-r add manually)
+// content,
+// font-size,
+// top: 0,
+// left: 0,
+// color: #fff,
+// font-weight: normal,
+// @element: ~':after'
+
+.mx_font-sprite( @content;
+				 @size;
+				 @top: 0;
+				 @left: 0;
+				 @color: @white;
+				 @fw: normal;
+				 @element: ~':after' ){
+
+	// position: relative; самостоятельно прописать в коде,
+	// т.к. может быть pos-a или pos-f
+
+	&@{element}{
+		content: @content;
+
+		position: absolute;
+		top: @top;
+		left: @left;
+
+		color: @color;
+		font-size: @size;
+		font-family: 'icomoon';
+		font-style: normal;
+		font-weight: @fw;
+		font-variant: normal;
+		line-height: 1;
+		
+		text-transform: none;
+		speak: none;
+
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+.mx_sprite-all(@bg-p; @sprite: @sprite) {
+	background-image: @sprite;
+	background-repeat: no-repeat;
+	background-position: @bg-p;
+}
+
+.mx_sprite(@sprite: @sprite) {
+	background-image: @sprite;
+	background-repeat: no-repeat;
+}

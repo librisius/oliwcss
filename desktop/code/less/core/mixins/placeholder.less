@@ -1,0 +1,88 @@
+._mx_placeholder( @color: @c-text-base;
+				  @color_focus: transparent;
+				  @color_hover: @c-text-base;
+				  @fw: inherit;
+				  @lts: inherit;
+				  @overflow: ellipsis ) {
+
+	&::-webkit-input-placeholder {
+		color: @color;
+		font-weight: @fw;
+		letter-spacing: @lts;
+	}
+
+	&::-moz-placeholder {
+		color: @color;
+		font-weight: @fw;
+		letter-spacing: @lts;
+	}
+
+	&:-moz-placeholder {
+		color: @color;
+		font-weight: @fw;
+		letter-spacing: @lts;
+	}
+
+	&:-ms-input-placeholder {
+		color: @color;
+		font-weight: @fw;
+		letter-spacing: @lts;
+	}
+
+
+
+
+
+	&:focus::-webkit-input-placeholder {
+		color: @color_focus;
+		font-weight: @fw;
+		letter-spacing: @lts;
+	}
+
+	&:focus::-moz-placeholder {
+		color: @color_focus;
+		font-weight: @fw;
+		letter-spacing: @lts;
+	}
+
+	&:focus:-moz-placeholder {
+		color: @color_focus;
+		font-weight: @fw;
+		letter-spacing: @lts;
+	}
+
+	&:focus:-ms-input-placeholder {
+		color: @color_focus;
+		font-weight: @fw;
+		letter-spacing: @lts;
+	}
+
+
+
+
+
+	&:hover::-webkit-input-placeholder {
+		color: @color_hover;
+		font-weight: @fw;
+		letter-spacing: @lts;
+	}
+
+	&:hover::-moz-placeholder {
+		color: @color_hover;
+		font-weight: @fw;
+		letter-spacing: @lts;
+	}
+
+	&:hover:-moz-placeholder {
+		color: @color_hover;
+		font-weight: @fw;
+		letter-spacing: @lts;
+	}
+
+	&:hover:-ms-input-placeholder {
+		color: @color_focus;
+		font-weight: @fw;
+		letter-spacing: @lts;
+	}
+
+}
