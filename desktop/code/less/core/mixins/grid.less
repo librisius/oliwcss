@@ -1,8 +1,11 @@
-._mx_grid(@rows; @counter: 0) when (@counter <= @rows) {
+._mx_grid(@padding; @rows; @counter: 1) when (@counter <= @rows) {
 	
 	.col-@{counter} {
-		width: (100% / @rows * @counter);
+		width: 100% / @rows * @counter;
+		padding: 0 @padding;
 	}
 
-	._mx_grid(@rows, (@counter + 1));
+	._mx_grid(@padding; @rows; (@counter + 1));   
 }
+
+// ._mx_grid(10px, 12);

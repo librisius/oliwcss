@@ -5,6 +5,18 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		watch: {
+			desktop_jade: {
+				files: ['desktop/code/jade/**/*.jade'],
+				tasks: ['jade:desktop']
+			},
+			tablet_jade: {
+				files: ['tablet/code/jade/**/*.jade'],
+				tasks: ['jade:tablet']			
+			},
+			mobile_jade: {
+				files: ['mobile/code/jade/**/*.jade'],
+				tasks: ['jade:mobile']			
+			},
 			desktop_less: {
 				files: ['desktop/code/less/**/*.less'],
 				tasks: ['less:desktop', 'autoprefixer:desktop'],
@@ -80,6 +92,51 @@ module.exports = function(grunt) {
 						src: ['**/*.js'],
 						dest: 'dist/js',
 						ext: '.min.js'
+					}
+				]
+			}
+		},
+
+		jade: {
+			desktop: {
+				options: {
+					pretty: true
+				},
+				files: [
+					{
+						expand: true,
+						cwd: 'desktop/code/jade',
+						src: ['**/*.jade', '!includes/**/*.jade'],
+						dest: 'desktop/code/',
+						ext: '.html'
+					}
+				]
+			},
+			tablet: {
+				options: {
+					pretty: true
+				},
+				files: [
+					{
+						expand: true,
+						cwd: 'tablet/code/jade',
+						src: ['**/*.jade', '!includes/**/*.jade'],
+						dest: 'tablet/code/',
+						ext: '.html'
+					}
+				]
+			},
+			mobile: {
+				options: {
+					pretty: true
+				},
+				files: [
+					{
+						expand: true,
+						cwd: 'mobile/code/jade',
+						src: ['**/*.jade', '!includes/**/*.jade'],
+						dest: 'mobile/code/',
+						ext: '.html'
 					}
 				]
 			}
@@ -173,6 +230,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-jade');
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');

@@ -19,10 +19,9 @@
 	cursor: pointer;
 	touch-action: manipulation;
 
-	.button-size(@w-btn; @h-btn; @brd_rd-btn; @pd_vert-btn; @pd_horiz-btn; @f__sz-btn; @brd_w-btn);
+	.button-size(@w-btn; @h-btn; @brd_rd-btn; @pd_vert-btn; @pd_horiz-btn; @f_sz-btn; @brd_w-btn);
 
-	&:hover,
-	&:focus {
+	&:hover {
 		border-color: @brd-btn_hover;
 
 		color: @c-btn_hover;
@@ -37,7 +36,7 @@
 	&.disable,
 	&[disable] {
 
-		.btn-filled-variant(@c-btn-disable; @bg-btn-disable; @per-brd-btn; @per-btn_hover; @per-btn_active);
+		.btn-filled-variant(@c-btn-disable; @bg-btn-disable; 0; 0; 0);
 
 		cursor: ~'not-allowed';
 		pointer-events: none; // Future-proof disabling of clicks
