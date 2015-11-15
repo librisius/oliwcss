@@ -1,0 +1,100 @@
+._mx_valign_line( @item: ~'.item';
+				 @h: 100%;
+				 @lh: @line-height-base;
+				 @h-lh: @h ) {
+
+	height: @h;
+	line-height: @h-lh;
+
+	& > @{item} {
+		display: inline-block;
+		vertical-align: middle;
+		line-height: @lh;
+	}
+}
+
+._mx_valign_table( @w: 100%;
+				  @h: 100%;
+				  @item: ~'.item' ) {
+	
+	display: table;
+	width: @w;
+	height: @h;
+
+	& > @{item} {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+._mx_inline( @item: ~'.item';
+			 @font-size: @font-size-base;
+			 @valign: top;
+			 @recovery: ~'._recovery' ) {
+
+	font-size: 0 !important;
+	letter-spacing: 0 !important;
+
+	& > @{item} {
+		display: inline-block;
+
+		vertical-align: @valign;
+
+		font-size: @font-size;
+		letter-spacing: @lts;
+	}
+
+	& > @{recovery} {
+		font-size: @font-size;
+		letter-spacing: @lts;
+	}
+}
+
+._mx_justify( @item: ~'.item';
+			 @font-size: @font-size-base;
+			 @valign: top;
+			 @recovery: ~'._recovery' ) {
+
+	font-size: 0 !important;
+	letter-spacing: 0 !important;
+
+	text-align: justify;
+	text-align-last: justify; //for IE 7 - 6
+	text-justify: newspaper; // for all IE
+
+	&:after {
+		content: '';
+
+		display: inline-block;
+		width: 100%;
+
+		visibility: hidden;
+		overflow: hidden;
+	}
+
+	& > @{item} {
+		display: inline-block;
+		vertical-align: @valign;
+
+		font-size: @font-size;
+		letter-spacing: @lts;
+		text-align: left;
+	}
+
+	& > @{recovery} {
+		font-size: @font-size;
+		letter-spacing: @lts;
+	}
+}
+
+._mx_to-bottom(@w: 100%) {
+	display: table;
+	table-layout: fixed;
+	width: @w;
+	height: 100%;
+
+	> .item {
+		display: ~'table-row';
+		height: 100%;
+	}
+}

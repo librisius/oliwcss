@@ -1,0 +1,243 @@
+/*----------- images -----------*/
+
+@sprite:						 url(../../media/img/sprite.png);
+@sprite_x2:						 url(../../media/img/sprite_x2.png);
+@sprite-size:					 100px 100px;
+
+/*----------- images (end) -----------*/
+
+
+
+
+
+/*----------- typography -----------*/
+
+@font-family-sans-serif:		 "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:				 Georgia, "Times New Roman", Times, serif;
+@font-family-monospace:			 Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base:				 @font-family-sans-serif;
+
+@font-size-large:				 ceil((@font-size-base * 1.25)); // ~18px
+@font-size-medium:				 floor((@font-size-base * 1.15)); // ~16px
+@font-size-small:				 ceil((@font-size-base * 0.85)); // ~12px
+@font-size-base:				 14px;
+
+@font-size-h1:					 floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2:					 floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3:					 ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4:					 ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h5:					 @font-size-base;
+@font-size-h6:					 ceil((@font-size-base * 0.85)); // ~12px
+
+@font-size-body:				 @font-size-base;
+@font-size-main: 				 10px;
+
+@lts: 							 0;
+
+@m_b-h-h1:						 20px;
+@m_b-h-h2:						 15px;
+@m_b-h-h3:						 10px;
+@m_b-h-h4:						 7px;
+@m_b-h-h5:						 5px;
+@m_b-h-h6:						 5px;
+
+@m_t-h1:						 -4px;
+@m_b-h1:						 -6px;
+@m_t-h2:						 -3px;
+@m_b-h2:						 -5px;
+@m_t-h3:						 -3px;
+@m_b-h3:						 -4px;
+@m_t-h4:						 -2px;
+@m_b-h4:						 -3px;
+@m_t-h5:						 -2px;
+@m_b-h5:						 -2px;
+@m_t-h6:						 -1px;
+@m_b-h6:						 -2px;
+
+@line-height-base:				 1.2;
+@line-height-medium:			 1.4;
+@line-height-computed:			 floor((@font-size-base * @line-height-base)); // ~20px
+
+@headings-font-family:			 inherit;
+@font-weight-base:				 400;
+@font-height-medium:			 500;
+@headings-font-weight: 			 @font-weight-base;
+@headings-line-height:			 1;
+@headings-color:				 inherit;
+
+/*----------- typography (end) -----------*/
+
+
+
+
+
+/*----------- common -----------*/
+
+@w-container:					 960px;
+
+@w-min:							 320px;
+@h-min:							 768px;
+@img: 							 '../../media/img';
+
+/*----------- common (end) -----------*/
+
+
+
+
+
+/*----------- media -----------*/
+
+@md-tablet:						 @w-container;
+@md-mobile:						 640px;
+
+/*----------- media (end) -----------*/
+
+
+
+
+
+/*----------- hr -----------*/
+
+@h-hr:							 1px;
+@w-hr:							 100%;
+
+/*----------- hr (end) -----------*/
+
+
+
+
+
+/*----------- link -----------*/
+
+@brd_w-link:					 1px;
+@lh-link:						 1;
+
+/*----------- link (end) -----------*/
+
+
+
+
+
+/*----------- form -----------*/
+
+@disp-label: 					 inline-block;
+@mb-label: 						 0px;
+
+@h-input:						 34px;
+@h-textarea:					 74px;
+
+@brd-input:						 1px;
+@brd_rd-input:					 2px;
+
+@pd_vert-input:					 6px;
+@pd_horiz-input:				 12px;
+
+@m-row-input:					 10px;
+@m-form-body:					 @m-row-input*2;
+
+@fsz-input: 					 @font-size-body;
+
+@per-input_col-many:			 50%;
+
+@w-checkbox:					 13px;
+@h-checkbox:					 @w-checkbox;
+@brd_w-checkbox:				 1px;
+@brd_rd-checkbox:				 2px;
+@w-checkbox__child:				 7px;
+@h-checkbox__child:				 7px;
+@brd_rd-checkbox__child:		 2px;
+
+@w-radio:						 13px;
+@h-radio:						 @w-radio;
+@brd_w-radio:					 1px;
+@brd_rd-radio:					 50%;
+@w-radio__child:				 7px;
+@h-radio__child:				 @w-radio__child;
+
+@brd_w-selectbox:				 1px;
+@h_mx-selectbox__ul:			 200px;
+@pd_vert-selectbox__li:			 5px;
+@pd_horiz-selectbox__li:		 10px;
+
+@w-selectbox__trigger:			 34px;
+@brd_w-selectbox__trigger-arrow: 5px;
+
+@mg-selectbox__search:			 5px;
+@pd_vert-selectbox__search:		 6px;
+@pd_horiz-selectbox__search:	 12px;
+
+@mg-selectbox__not-found:		 @mg-selectbox__search;
+@pd_vert-selectbox__not-found:   5px;
+@pd_horiz-selectbox__not-found:  8px;
+
+@pd_vert-selectbox-multiple:	 5px;
+@pd_horiz-selectbox-multiple:	 8px;
+@brd_w-selectbox-multiple:		 1px;
+@brd_rd-selectbox-multiple:		 2px;
+
+/*----------- form (end) -----------*/
+
+
+
+
+
+
+/*----------- table -----------*/
+
+@pd_vert-td:					 10px;
+@pd_horiz-td:					 10px;
+
+/*----------- table (end) -----------*/
+
+
+
+
+
+
+/*----------- button -----------*/
+
+@w-btn:							 auto;
+@w-btn_lg:						 auto;
+@w-btn_sm:						 auto;
+@w-btn_xs:						 auto;
+
+@h-btn: 						 auto;
+@h-btn_lg: 						 auto;
+@h-btn_sm: 						 auto;
+@h-btn_xs: 						 auto;
+
+@brd_w-btn: 					 1px;
+@brd_rd-btn:					 4px;
+@brd_rd-btn_lg:					 6px;
+@brd_rd-btn_sm:					 3px;
+@brd_rd-btn_xs:					 3px;
+
+@pd_vert-btn:					 6px;
+@pd_horiz-btn:					 12px;
+
+@pd_vert-btn_lg:				 10px;
+@pd_horiz-btn_lg:				 16px;
+
+@pd_vert-btn_sm:				 5px;
+@pd_horiz-btn_sm:				 10px;
+
+@pd_vert-btn_xs:				 1px;
+@pd_horiz-btn_xs:				 5px;
+
+@f_sz-btn:						 @font-size-base;
+@f_sz-btn_lg:					 @font-size-large;
+@f_sz-btn_sm:					 @font-size-small;
+@f_sz-btn_xs:					 @font-size-small;
+
+@btn-font-weight: 				 400;
+
+@lh-btn:						 1;
+@lh-btn_lg:						 1;
+@lh-btn_sm:						 1;
+@lh-btn_xs:						 1;
+
+@per-brd-btn:					 0%;
+@per-btn_hover:					 5%;
+@per-btn_active:				 5%;
+
+/*----------- button (end) -----------*/

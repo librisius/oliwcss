@@ -1,0 +1,146 @@
+.btn {
+	display: inline-block;
+
+	margin-bottom: 0; // For input.btn
+	border-style: solid;
+	border-color: @brd-btn;
+
+	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	background-color: rgba(255, 255, 255, 0);
+
+	color: @c-btn;
+	font-weight: @btn-font-weight;
+
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+
+	cursor: pointer;
+	touch-action: manipulation;
+
+	._mx_button-size(@w-btn; @h-btn; @brd_rd-btn; @pd_vert-btn; @pd_horiz-btn; @f_sz-btn; @brd_w-btn);
+
+	&:hover {
+		border-color: @brd-btn_hover;
+
+		color: @c-btn_hover;
+	}
+
+	&:active {
+		border-color: @brd-btn_active;
+
+		color: @c-btn_active;
+	}
+
+	&.disable,
+	&[disable] {
+
+		._mx_btn-filled-variant(@c-btn-disable; @bg-btn-disable; 0; 0; 0);
+
+		cursor: ~'not-allowed';
+		pointer-events: none; // Future-proof disabling of clicks
+	}
+}
+
+.btn-link {
+	width: auto;
+	height: auto;
+
+	border: 0;
+	border-radius: 0;
+	padding: 0;
+
+	&:extend(.btn all);
+
+	._mx_btn-link(@brd-c-btn-link; @c-btn-link; @brd-c-btn-link_hover; @c-btn-link_hover);
+}
+
+.btn-outline {
+
+	&:extend(.btn all);
+
+	._mx_btn-variant(@c-btn-outline; @c-btn-outline__hover);
+}
+
+.btn-default {
+
+	&:extend(.btn all);
+
+	._mx_btn-default-variant(@c-btn-default; @bg-btn-default; @per-btn_hover; @per-btn_active);
+}
+
+.btn-primary {
+
+	&:extend(.btn all);
+
+	._mx_btn-filled-variant(@c-btn-filled; @bg-btn-primary; @per-brd-btn; @per-btn_hover; @per-btn_active);
+}
+
+.btn-success {
+	
+	&:extend(.btn all);
+
+	._mx_btn-filled-variant(@c-btn-filled; @bg-btn-success; @per-brd-btn; @per-btn_hover; @per-btn_active);
+}
+
+.btn-info {
+
+	&:extend(.btn all);
+
+	._mx_btn-filled-variant(@c-btn-filled; @bg-btn-info; @per-brd-btn; @per-btn_hover; @per-btn_active);
+}
+
+.btn-warning {
+
+	&:extend(.btn all);
+
+	._mx_btn-filled-variant(@c-btn-filled; @bg-btn-warning; @per-brd-btn; @per-btn_hover; @per-btn_active);
+}
+
+.btn-danger {
+
+	&:extend(.btn all);
+
+	._mx_btn-filled-variant(@c-btn-filled; @bg-btn-danger; @per-brd-btn; @per-btn_hover; @per-btn_active);
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+
+	._mx_button-size(@w-btn_lg; @h-btn_lg; @brd_rd-btn_lg; @pd_vert-btn_lg; @pd_horiz-btn_lg; @f_sz-btn_lg; @brd_w-btn);
+}
+.btn-sm {
+
+	._mx_button-size(@w-btn_sm; @h-btn_sm; @brd_rd-btn_sm; @pd_vert-btn_sm; @pd_horiz-btn_sm; @f_sz-btn_sm; @brd_w-btn);
+}
+.btn-xs {
+
+	._mx_button-size(@w-btn_xs; @h-btn_xs; @brd_rd-btn_xs; @pd_vert-btn_xs; @pd_horiz-btn_xs; @f_sz-btn_xs; @brd_w-btn);
+}
+
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+	display: block;
+	width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+	margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+
+	&.btn-block {
+		width: 100%;
+	}
+}

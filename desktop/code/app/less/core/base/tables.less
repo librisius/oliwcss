@@ -1,0 +1,51 @@
+.table {
+	width: 100%;
+
+	text-align: left;
+
+	td,
+	th {
+		padding: @pd_vert-td @pd_horiz-td;
+
+		vertical-align: middle;
+	}
+
+	thead {
+
+		th {
+			font-size: 1.1em;
+
+			font-weight: 600;
+		}
+	}
+
+	&_even {
+
+		&:extend(.table all);
+
+		tbody {
+
+			tr:nth-child(2n) {
+				background: @table_even;
+			}
+		}
+	}
+
+	&_odd {
+
+		&:extend(.table all);
+
+		tbody {
+
+			tr:nth-child(2n-1) {
+				background: @table_odd;
+			}
+		}
+	}
+}
+
+.thead {
+	border-color: @table_hr;
+	border-style: solid;
+	border-bottom-width: 1px;
+}

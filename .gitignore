@@ -1,4 +1,4 @@
-**/code/.bowerrc
-**/code/package.json
-**/code/node_modules/
+**/.bowerrc
+**/package.json
+**/node_modules/
 **/materials/
