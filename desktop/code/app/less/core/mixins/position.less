@@ -1,7 +1,7 @@
 ._mx_valign_line( @item: ~'.item';
-				 @h: 100%;
-				 @lh: @line-height-base;
-				 @h-lh: @h ) {
+				  @h: 100%;
+				  @lh: @line-height-base;
+				  @h-lh: @h ) {
 
 	height: @h;
 	line-height: @h-lh;
@@ -13,9 +13,9 @@
 	}
 }
 
-._mx_valign_table( @w: 100%;
-				  @h: 100%;
-				  @item: ~'.item' ) {
+._mx_valign_table( @item: ~'.item';
+				   @w: 100%;
+				   @h: 100% ) {
 	
 	display: table;
 	width: @w;
@@ -50,15 +50,51 @@
 	}
 }
 
+._mx_inline_none( @item: ~'.item';
+				  @recovery: ~'._recovery' ) {
+
+	font-size: inherit !important;
+	letter-spacing: @lts !important;
+
+	& > @{item} {
+		display: inline-block;
+
+		vertical-align: auto;
+
+		font-size: auto;
+		letter-spacing: @lts;
+
+		text-align: left;
+
+		// RESET
+		text-align-last: auto;
+		text-justify: auto;
+	}
+
+	& > @{recovery} {
+		font-size: inherit;
+		letter-spacing: @lts;
+
+		text-align: left;
+
+		// RESET
+		text-align-last: auto;
+		text-justify: auto;
+	}
+}
+
 ._mx_justify( @item: ~'.item';
-			 @font-size: @font-size-base;
-			 @valign: top;
-			 @recovery: ~'._recovery' ) {
+			  @font-size: @font-size-base;
+			  @valign: top;
+			  @recovery: ~'._recovery' ) {
 
 	font-size: 0 !important;
 	letter-spacing: 0 !important;
 
 	text-align: justify;
+
+	// Libris use autoprefix therefore it works in other browsers!!
+	// for example FF, DON'T FORGET RESET IT!!
 	text-align-last: justify; //for IE 7 - 6
 	text-justify: newspaper; // for all IE
 
@@ -78,16 +114,27 @@
 
 		font-size: @font-size;
 		letter-spacing: @lts;
+
 		text-align: left;
+
+		// RESET
+		text-align-last: auto;
+		text-justify: auto;
 	}
 
 	& > @{recovery} {
 		font-size: @font-size;
 		letter-spacing: @lts;
+		
+		text-align: left;
+
+		// RESET
+		text-align-last: auto;
+		text-justify: auto;
 	}
 }
 
-._mx_to-bottom(@w: 100%) {
+._mx_to-bottom( @w: 100% ) {
 	display: table;
 	table-layout: fixed;
 	width: @w;

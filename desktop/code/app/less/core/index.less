@@ -2,23 +2,10 @@
 @import 'settings/colors';
 @import 'settings/options';
 
-/* base */
-@import 'base/reset'; // !important before other styles
-@import (reference) 'base/buttons';
-@import (reference) 'base/br';
-@import 'base/common';
-@import (reference) 'base/forms';
-@import (reference) 'base/tables';
-@import 'base/typography';
-
-/* snippets */
-@import 'snippets/float';
-@import 'snippets/tabs';
-@import 'snippets/container';
-
 /* mixins */
 @import 'mixins/buttons';
 @import 'mixins/center';
+@import 'mixins/elements';
 @import 'mixins/float';
 @import 'mixins/gradients';
 @import 'mixins/grid';
@@ -31,3 +18,18 @@
 @import 'mixins/retina';
 @import 'mixins/sprites';
 @import 'mixins/text';
+
+/* base */
+@import 'base/reset'; // !important before other styles
+@import (reference) 'base/buttons';
+@import (reference) 'base/br';
+@import 'base/common';
+@import (reference) 'base/forms';
+@import (reference) 'base/links';
+@import (reference) 'base/tables';
+@import 'base/typography';
+
+/* snippets */
+@import 'snippets/float';
+@import 'snippets/tabs';
+@import 'snippets/container';

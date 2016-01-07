@@ -1,5 +1,5 @@
 ._mx_btn-variant( @c-btn;
-				 @c-btn_hover) {
+				  @c-btn_hover) {
 	
 	@brd-btn: @c-btn;
 
@@ -21,33 +21,33 @@
 
 
 ._mx_btn-default-variant( @c-btn;
-						 @bg-btn;
-						 @per-hover;
-						 @per-active;
-						 @brd_c-btn: @c-btn ) {
+						  @bg-btn;
+						  @per-hover;
+						  @per-active;
+						  @brd_c-btn: @c-btn ) {
 
 	border-color: @brd_c-btn;
 	background-color: @bg-btn;
 	color: @c-btn;
 
 	&:hover {
-		border-color: fadein(@brd_c-btn, @per-hover);
-		background-color: fadein(@bg-btn, @per-hover);
+		border-color: lighten(@brd_c-btn, @per-hover);
+		background-color: lighten(@bg-btn, @per-hover);
 		color: @c-btn;
 	}
 
 	&:active {
-		border-color: fadein(@brd_c-btn, @per-hover + @per-active);
-		background-color: fadein(@bg-btn, @per-hover + @per-active);
+		border-color: lighten(@brd_c-btn, @per-hover + @per-active);
+		background-color: lighten(@bg-btn, @per-hover + @per-active);
 	}
 }
 
 
 
 ._mx_btn-link( @brd-b-c-btn;
-			  @c-btn;
-			  @brd-b-c-btn_hover;
-			  @c-btn_hover ) {
+			   @c-btn;
+			   @brd-b-c-btn_hover;
+			   @c-btn_hover ) {
 
 	border-color: transparent;
 	border-bottom: 1px solid @brd-b-c-btn;
@@ -62,10 +62,10 @@
 
 
 ._mx_btn-filled-variant( @c-btn;
-						@bg-btn;
-						@per-brd;
-						@per-hover;
-						@per-active ) {
+						 @bg-btn;
+						 @per-brd;
+						 @per-hover;
+						 @per-active ) {
 
 	@brd-btn: darken(@bg-btn, @per-brd);
 

@@ -9,3 +9,21 @@
 		height: auto;
 	}
 }
+
+._mx_wrap-img_center(@w: auto; @h: auto) {
+	width: @w;
+	height: @h;
+
+	overflow: hidden;
+
+	font-size: 0 !important;
+	line-height: @h;
+	letter-spacing: 0 !important;
+	text-align: center;
+
+	img {
+		display: inline-block;
+		max-width: 100%;
+		max-height: 100%;
+	}
+}

@@ -8,7 +8,7 @@ var gulp 			= require('gulp'),
 	less 			= require('gulp-less'),
 
 	autoprefixer 	= require('gulp-autoprefixer'),
-	nano			= require('gulp-cssnano'),
+	minifyCSS		= require('gulp-minify-css'),
 	uncss 			= require('gulp-uncss'),
 
 	jade 			= require('gulp-jade'),
@@ -47,7 +47,9 @@ gulp.task('css', function() {
 		)
 
 		.pipe (
-			nano()
+			minifyCSS({
+				compatibility: 'ie8'
+			})
 		)
 
 		.pipe (
@@ -91,7 +93,15 @@ gulp.task('css_tb', function() {
 		)
 
 		.pipe (
-			nano()
+			minifyCSS({
+				compatibility: 'ie8'
+			})
+		)
+
+		.pipe (
+			rename({
+				suffix: '.min'
+			})
 		)
 
 		.pipe (
@@ -129,7 +139,15 @@ gulp.task('css_mb', function() {
 		)
 
 		.pipe (
-			nano()
+			minifyCSS({
+				compatibility: 'ie8'
+			})
+		)
+
+		.pipe (
+			rename({
+				suffix: '.min'
+			})
 		)
 
 		.pipe (
