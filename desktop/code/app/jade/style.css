@@ -1,0 +1,24 @@
+section {
+	margin: 50px 0;
+	border: 1px solid #F0F0F0;
+	border-radius: 10px;
+	padding: 20px;
+	background: #FCFCFC;
+}
+
+hr {
+	width: 100%;
+	height: 1px;
+
+	margin: 20px 0;
+
+	background-color: #e4e4e4;
+}
+
+section > .h1:first-child hr {
+	margin: -10px 0 20px;
+}
+
+.g-section_sm + .g-section_sm {
+	margin-top: 20px;
+}

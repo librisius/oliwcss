@@ -2,136 +2,177 @@ doctype html
 html(lang="en")
 	include includes/base/head.jade
 
+	style
+		include style.css
+
 	body
 
+		a(href="https://github.com/librisius/oliwcss")
+			img(
+				style="z-index: 999; position: fixed; top: 0; left: 0; border: 0;",
+				src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67",
+				alt="Fork me onv GitHub",
+				data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png",
+				data-pin-nopin="true" )
+
 		.container
-			h1 Heading
-			p Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit. Cupiditate velit reprehenderit dolor itaque! Totam, maxime vel mollitia necessitatibus! Ad, quidem earum distinctio aliquid. Quisquam itaque obcaecati, architecto ipsam iste quam!
-			h2 Heading
-			h3 Heading
-			h4 Heading
-			h5 Heading
-			h6 Heading
-			hr
 
+			section
 
+				h2.h1 Типографика
+				hr
 
-			form
+				.g-section_sm
+					h1 Заголовок 1
+					p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько <a href="#" class="link">абзацев более менее</a> осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.
 
-				.form-body
+				.g-section_sm
+					h2 Заголовок 2
+					p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.
 
-					.row-input
+				.g-section_sm
+					h3 Заголовок 3
+					p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.
 
-						.b-input_col-6
-							input
-						.b-input_col-6
-							input
+				.g-section_sm
+					h4 Заголовок 4
+					p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке.
 
-					.row-input
-						input
+				.g-section_sm
+					h5 Заголовок 5
+					p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке.
 
-					.row-input
-						textarea Message
+				.g-section_sm
+					h6 Заголовок 6
+					p Сайт рыбатекст поможет дизайнеру, верстальщику.
 
-				button.btn-primary Отправить
+			section
 
+				h2.h1 Формы
+				hr
 
+				form
 
-			table.table
+					.form-body
 
-				thead
+						.row-input
+							input(placeholder="Placeholder input")
 
-					tr
+						.row-input
+							textarea(placeholder="Placeholder textarea")
 
-						th 1
-						th 2
-						th 3
-						th 4
-						th 5
-				tbody
+			section
 
-					tr
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
+				h2.h1 Кнопки
+				hr
 
-					tr
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
+				button.btn-primary Кнопка
+				button.btn-success Кнопка
+				button.btn-info Кнопка
+				button.btn-warning Кнопка
+				button.btn-danger Кнопка
 
-					tr
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
+			section
+				h2.h1 Таблицы
+				hr
 
-					tr
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
+				table.table
 
-					tr
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
+					thead
 
-			table.table_odd
+						tr
 
-				thead.thead
+							th 1
+							th 2
+							th 3
+							th 4
+							th 5
+					tbody
 
-					tr
-						th 1
-						th 2
-						th 3
-						th 4
-						th 5
+						tr
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
 
-				tbody
+						tr
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
 
-					tr
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
+						tr
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
 
-					tr
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
+						tr
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
 
-					tr
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
+						tr
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
 
-					tr
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
+				hr
 
-					tr
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
-						td Lorem
+				table.table_odd
+
+					thead.thead
+
+						tr
+							th 1
+							th 2
+							th 3
+							th 4
+							th 5
+
+					tbody
+
+						tr
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
+
+						tr
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
+
+						tr
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
+
+						tr
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
+
+						tr
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
+							td Lorem
 
 
 

@@ -210,7 +210,7 @@ label {
 }
 
 .jq-selectbox {
-	z-index: 5 !important;  // nulls js style
+	z-index: auto !important;  // nulls js style
 	vertical-align: middle;
 	color: @c-input;
 	cursor: pointer;
@@ -308,6 +308,7 @@ label {
 
 		position: absolute;
 		top: @h-input;
+		z-index: 5;
 
 		margin: 0;
 		box-sizing: border-box;

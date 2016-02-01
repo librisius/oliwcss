@@ -10,6 +10,22 @@
 	}
 }
 
+._mx_wrap-img_auto(@w: auto; @h: auto) {
+	width: @w;
+	height: @h;
+
+	overflow: hidden;
+
+	font-size: 0 !important;
+	letter-spacing: 0 !important;
+
+	img {
+		display: inline-block;
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
 ._mx_wrap-img_center(@w: auto; @h: auto) {
 	width: @w;
 	height: @h;
