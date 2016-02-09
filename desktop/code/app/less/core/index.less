@@ -71,6 +71,13 @@
 
 /* snippets */
 
+._use_container() when (@_use_container = true) {
+	@import 'snippets/container';
+}
+._use_container();
+
+
+
 ._use_float() when (@_use_float = true) {
 	@import 'snippets/float';
 }
@@ -78,14 +85,14 @@
 
 
 
+._use_modifiers() when (@_use_modifiers = true) {
+	@import 'snippets/modifiers';
+}
+._use_modifiers();
+
+
+
 ._use_tabs() when (@_use_tabs = true) {
 	@import 'snippets/tabs';
 }
 ._use_tabs();
-
-
-
-._use_container() when (@_use_container = true) {
-	@import 'snippets/container';
-}
-._use_container();

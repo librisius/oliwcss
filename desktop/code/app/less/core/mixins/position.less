@@ -27,16 +27,20 @@
 	}
 }
 
+// !! @recovery variable is needed if you don't want to have inline style
+// for some children elements
+// !! @display variable is needed if you want to have inline-table
 ._mx_inline( @item: ~'.item';
 			 @font-size: @font-size-base;
 			 @valign: top;
-			 @recovery: ~'._recovery' ) {
+			 @recovery: ~'._recovery';
+			 @display: inline-block ) {
 
 	font-size: 0 !important;
 	letter-spacing: 0 !important;
 
 	& > @{item} {
-		display: inline-block;
+		display: @display;
 
 		vertical-align: @valign;
 
@@ -50,14 +54,18 @@
 	}
 }
 
+// !! @recovery variable is needed if you don't want to have inline style
+// for some children elements
+// !! @display variable is needed if you want to have inline-table
 ._mx_inline_none( @item: ~'.item';
-				  @recovery: ~'._recovery' ) {
+				  @recovery: ~'._recovery';
+				  @display: inline-block ) {
 
 	font-size: inherit !important;
 	letter-spacing: @lts !important;
 
 	& > @{item} {
-		display: inline-block;
+		display: @display;
 
 		vertical-align: auto;
 
@@ -83,10 +91,14 @@
 	}
 }
 
+// !! @recovery variable is needed if you don't want to have inline style
+// for some children elements
+// !! @display variable is needed if you want to have inline-table
 ._mx_justify( @item: ~'.item';
 			  @font-size: @font-size-base;
 			  @valign: top;
-			  @recovery: ~'._recovery' ) {
+			  @recovery: ~'._recovery';
+			  @display: inline-block ) {
 
 	font-size: 0 !important;
 	letter-spacing: 0 !important;
@@ -101,7 +113,7 @@
 	&:after {
 		content: '';
 
-		display: inline-block;
+		display: @display;
 		width: 100%;
 
 		visibility: hidden;
@@ -109,7 +121,7 @@
 	}
 
 	& > @{item} {
-		display: inline-block;
+		display: @display;
 		vertical-align: @valign;
 
 		font-size: @font-size;
@@ -134,14 +146,41 @@
 	}
 }
 
-._mx_to-bottom( @w: 100% ) {
+._mx_to-vert( @item: ~'.item';
+			  @w: 100%;
+			  @major: ~'._major' ) {
+
 	display: table;
 	table-layout: fixed;
 	width: @w;
 	height: 100%;
 
-	> .item {
+	> @{item} {
 		display: ~'table-row';
+	}
+
+	> @{major} {
 		height: 100%;
+	}
+}
+
+._mx_to-horiz( @item: ~'.item';
+			   @valign: top;
+			   @w: 100%;
+			   @major: ~'._major' ) {
+
+	display: table;
+	width: @w;
+	height: 100%;
+
+	> @{item} {
+		display: ~'table-cell';
+		vertical-align: @valign; // without this value
+		// there is an error in FF and IE
+		// looks like baseline
+	}
+
+	> @{major} {
+		width: 100%;
 	}
 }
