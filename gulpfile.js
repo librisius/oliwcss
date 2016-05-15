@@ -1,6 +1,5 @@
 var gulp 			= require('gulp'),
 
-	livereload 		= require('gulp-livereload'),
 	sourcemaps 		= require('gulp-sourcemaps'),
 	rename 			= require("gulp-rename"),
 
@@ -38,21 +37,27 @@ gulp.task('html', function() {
 
 	html([
 		'desktop/code/app/jade/**/*.jade',
-		'!desktop/code/app/jade/includes/**/*.jade' ], 'desktop/code/');
+		'!desktop/code/app/jade/extends/**/*.jade',
+		'!desktop/code/app/jade/includes/**/*.jade',
+		'!desktop/code/app/jade/mixins/**/*.jade' ], 'desktop/code/');
 });
 
 gulp.task('html_tb', function() {
 
 	html([
 		'tablet/code/app/jade/**/*.jade',
-		'!tablet/code/app/jade/includes/**/*.jade' ], 'tablet/code/');
+		'!tablet/code/app/jade/extends/**/*.jade',
+		'!tablet/code/app/jade/includes/**/*.jade',
+		'!tablet/code/app/jade/mixins/**/*.jade' ], 'tablet/code/');
 });
 
 gulp.task('html_mb', function() {
 
 	html([
 		'mobile/code/app/jade/**/*.jade',
-		'!mobile/code/app/jade/includes/**/*.jade' ], 'mobile/code/');
+		'!mobile/code/app/jade/extends/**/*.jade',
+		'!mobile/code/app/jade/includes/**/*.jade',
+		'!mobile/code/app/jade/mixins/**/*.jade' ], 'mobile/code/');
 });
 
 
@@ -127,7 +132,7 @@ function css(from, to) {
 		)
 
 		.pipe (
-			sourcemaps.write('./')
+			sourcemaps.write()
 		)
 
 		.pipe(

@@ -21,17 +21,34 @@ body {
 	background-color: @bg-body;
 
 	color: @c-text-base;
-	font: @font-weight-base @font-size-body ~"/" @line-height-base @font-family-base;
+
+	// use font styles separately because if U'll use rem
+	// That's broken on ie <= 10
+	font-family: @font-family-base;
+	font-size: @font-size-body;
+	line-height: @line-height-base;
+	font-weight: @font-weight-base;
 
 	overflow-x: hidden;
 
-	&.no-scroll{
+	&._no-scroll{
 		height: 100%;
 		overflow: hidden;
 	}
 
 	// for testinng mobile version
-	&.mobile-test{
+	&._mobile-test{
 		width: 320px;
 	}
+}
+
+._mb-none {
+
+	._mx_md-tablet({
+		display: none;
+	});
+}
+
+._mb-only {
+	display: none;
 }

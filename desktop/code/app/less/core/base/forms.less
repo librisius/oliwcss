@@ -1,112 +1,107 @@
-input {
-
-	&[type="checkbox"],
-	&[type="radio"] {
-		cursor: pointer;
-	}
-}
-
-input,
-textarea,
+.-ol-input,
+.-ol-textarea,
 .jq-selectbox {
 	display: block;
 	width: 100%;
 }
 
-input, .input,
-textarea {
+.-ol-input,
+.-ol-textarea {
 	padding: @pd_vert-input @pd_horiz-input;
 	border: @brd-input solid @brd_c-input;
-	box-sizing: border-box;
 	border-radius: @brd_rd-input;
 
 	background: @bg-input;
 
 	color: @c-input;
 	font-size: @fsz-input;
-	line-height: @h-input - @brd-input*2 - @pd_vert-input*2;
+	line-height: @h-input - @brd-input * 2 - @pd_vert-input * 2;
 
 	._mx_placeholder(@placeholder, transparent, ellipsis);
 }
 
-input, .input {
+.-ol-input {
 	height: @h-input;
+	text-overflow: ellipsis;
 }
 
-textarea {
+.-ol-textarea {
 	height: @h-textarea;
 	resize: none;
-
 	overflow: auto;
 }
 
-label {
-	display: @disp-label;
+.-ol-label-wrap {
+	display: block; // for label block
 
-	vertical-align: top;
+	.-ol-label {
+		color: @c-label;
+		font-size: @f_sz-label;
+		font-weight: @f_w-label;
 
-	color: @c-label;
-
-	& + input,
-	& + .e-input,
-	& + textarea,
-	& + .jq-selectbox {
-		display: @disp-label;
-
-		margin-top: @mb-label;
-	}
-
-	& > span,
-	& > div
-	& > input,
-	& > textarea  {
-		display: inline-block;
-	}
-
-	& > span {
-		color: @c-label__span;
+		& + .-ol-input,
+		& + .-ol-textarea,
+		& + .jq-selectbox {
+			margin-top: @mb-label;
+		}
 	}
 }
 
-.form-body {
+.-ol-form-body {
 	margin-bottom: @m-form-body;
 }
 
-.row-input {
-	width: 100%;
-}
-
-.row-inputs {
+.-ol-row-input {
 	width: 100%;
 
-	._mx_justify(~'.input-wrap');
+	._mx_inline(~'.-ol-input-item');
 
-	.input-wrap {
+	.-ol-input-item {
 		width: @per-input_col-many;
-
 		position: relative;
+
+		&._lg {
+			width: 100%;
+		}
+
+		+ .-ol-input-item {
+			margin-left: @m-col-input;
+		}
 	}
-}
 
-.row-input,
-.row-inputs {
-
-	& + .row-input,
-	& + .row-inputs {
+	+ .-ol-row-input {
 		margin-top: @m-row-input;
 	}
 }
 
-	.input-wrap {
-		width: 100%;
-	}
-
-		.e-input {
+		.-ol-input-wrap {
 			width: 100%;
 			position: relative;
+
+			&._error {
+
+				.-ol-input,
+				.jq-selectbox {
+					border-color: @c-form-error;
+				}
+
+				.jq-selectbox {
+
+					&__select {
+						border-color: @c-form-error;
+					}
+
+					&__trigger {
+
+						&:before {
+							background-color: @c-form-error;
+						}
+					}
+				}
+			}
 		}
 
-.input-file {
+.-ol-input-file {
 	overflow: hidden;
 
 	input {
@@ -127,9 +122,12 @@ label {
 	}
 }
 
-.checkbox {
+.-ol-checkbox {
 	width: @w-checkbox;
 	height: @h-checkbox;
+
+	overflow: hidden;
+
 	vertical-align: middle;
 
 	border: @brd_w-checkbox solid @brd_c-checkbox;
@@ -139,7 +137,7 @@ label {
 
 	cursor: pointer;
 
-	&.checked {
+	&._checked {
 		border-color: @brd_c-checkbox_checked;
 		background-color: @bg-checkbox_checked;
 
@@ -154,22 +152,23 @@ label {
 		}
 	}
 
-	&.focused {
+	&._focused {
 		border-color: @brd_c-checkbox_focused;
 	}
 
 
-	&.disabled {
+	&._disabled {
 		opacity: 0.55;
 		filter: alpha(opacity=55);
 	}
 
 	input {
-		width: 0;
+		width: 100% !important;
+		height: 100% !important;
 	}
 }
 
-.radio {
+.-ol-radio {
 	width: @w-radio;
 	height: @h-radio;
 	vertical-align: middle;
@@ -179,7 +178,7 @@ label {
 
 	cursor: pointer;
 
-	&.checked {
+	&._checked {
 		border-color: @brd_c-radio_checked;
 
 		background-color: @bg-radio_checked;
@@ -195,17 +194,18 @@ label {
 		}
 	}
 
-	&.focused {
+	&._focused {
 		border-color: @brd_c-radio_focused;
 	}
 
-	&.disabled {
+	&._disabled {
 		opacity: 0.55;
 		filter: alpha(opacity=55);
 	}
 
 	input {
-		width: 0;
+		width: 100% !important;
+		height: 100% !important;
 	}
 }
 
@@ -247,6 +247,10 @@ label {
 		}
 	}
 
+	> select {
+		border-radius: @brd_rd-input;
+	}
+
 	&__select {
 		padding: 0 @w-selectbox__trigger 0 @pd_horiz-input;
 		border: @brd_w-selectbox solid @brd_c-input;
@@ -269,7 +273,9 @@ label {
 	&__select-text {
 		display: block;
 
-		width: 100%;
+		// don'd add width: 100%; here
+		// otherwise .jq-selectbox will have width: 100%;
+		// found this bug for IE 9 for win 7
 
 		overflow: hidden;
 
@@ -343,20 +349,20 @@ label {
 
 				&.disabled {
 					color: #AAA;
-				}
 
-				&.disabled:hover {
-					background: none;
+					&:hover {
+						background: none;
+					}
 				}
 
 				&.optgroup {
 					font-weight: bold;
-				}
 
-				&.optgroup:hover {
-					background: none;
-					color: #231F20;
-					cursor: default;
+					&:hover {
+						background: none;
+						color: #231F20;
+						cursor: default;
+					}
 				}
 
 				&.option {
@@ -394,71 +400,5 @@ label {
 		margin: @mg-selectbox__not-found;
 		padding: @pd_vert-selectbox__not-found @pd_horiz-selectbox__not-found;
 		background: @bg-selectbox__not-found;
-	}
-}
-
-.jq-select-multiple {
-	padding: @pd_vert-selectbox-multiple @pd_horiz-selectbox-multiple;
-	border: @brd_w-selectbox-multiple solid @brd_c-selectbox-multiple;
-	border-radius: @brd_rd-selectbox-multiple;
-
-	background: @white;
-	
-	color: @brd_c-selectbox-multiple;
-
-	cursor: default;
-
-	&.focused {
-		border-color: @brd_c-selectbox-multiple_focused;
-	}
-
-	&.disabled {
-		border-color: @brd_c-input;
-
-		background: #F5F5F5;
-		box-shadow: none;
-
-		color: #888;
-	}
-
-	ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	li {
-		padding: 3px 9px;
-		list-style: none;
-
-		&:first-child {
-			border-radius: @brd_rd-selectbox-multiple @brd_rd-selectbox-multiple 0 0;
-		}
-
-		&:last-child {
-			border-radius: 0 0 @brd_rd-selectbox-multiple @brd_rd-selectbox-multiple;
-		}
-
-		&.selected {
-			background: #08C;
-			color: #FFF;
-		}
-
-		&.disabled {
-			color: #AAA;
-		}
-
-		&.optgroup {
-			font-weight: bold;
-		}
-
-		&.option {
-			padding-left: 25px;
-		}
-	}
-
-	&.disabled li.selected,
-	& li.selected.disabled {
-		background: @brd_c-input;
-		color: @white;
 	}
 }

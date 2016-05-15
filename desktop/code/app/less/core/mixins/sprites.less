@@ -7,13 +7,53 @@
 // font-weight: normal,
 // @element: ~':after'
 
-._mx_font-sprite( @content;
-				 @size;
-				 @top: 0;
-				 @left: 0;
-				 @color: @white;
-				 @fw: normal;
-				 @element: ~':after' ){
+._mx_font-sprite_element() {
+	font-family: 'icomoon' !important;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	line-height: 1;
+	letter-spacing: 0;
+	
+	text-transform: none;
+	speak: none;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+._mx_font-sprite( @element: ~':after' ) {
+
+	&@{element}{
+
+		._mx_font-sprite_element();
+	}
+}
+
+._mx_font-sprite-all_element( @size;
+							  @top: 0;
+							  @left: 0;
+							  @color: @white; ){
+
+	// write position: relative; yourself in the code,
+	// because you can have pos-a or pos-f
+
+	position: absolute;
+	top: @top;
+	left: @left;
+
+	color: @color;
+	font-size: @size;
+	
+	._mx_font-sprite_element();
+}
+
+._mx_font-sprite-all( @content;
+					  @size;
+					  @top: 0;
+					  @left: 0;
+					  @color: @white;
+					  @element: ~':after' ){
 
 	// write position: relative; yourself in the code,
 	// because you can have pos-a or pos-f
@@ -21,23 +61,10 @@
 	&@{element}{
 		content: @content;
 
-		position: absolute;
-		top: @top;
-		left: @left;
-
-		color: @color;
-		font-size: @size;
-		font-family: 'icomoon';
-		font-style: normal;
-		font-weight: @fw;
-		font-variant: normal;
-		line-height: 1;
-		
-		text-transform: none;
-		speak: none;
-
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
+		._mx_font-sprite-all_element(@size;
+									 @top: 0;
+									 @left: 0;
+									 @color: @white; )
 	}
 }
 

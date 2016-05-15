@@ -104,6 +104,7 @@ a {
 button {
 	display: block;
 	overflow: visible; // for reset ie style
+	color: inherit; // default color in Chrome #000
 }
 
 button,
@@ -111,6 +112,14 @@ input[type='submit'],
 input[type='reset'],
 input[type='file'] {
 	text-align: left;
+}
+
+input {
+
+	&[type="checkbox"],
+	&[type="radio"] {
+		cursor: pointer;
+	}
 }
 
 a {

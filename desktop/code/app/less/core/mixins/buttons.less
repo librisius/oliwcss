@@ -95,6 +95,7 @@
 				  @pd_vert-btn;
 				  @pd_horiz-btn;
 				  @f_sz-btn;
+				  @lh-btn;
 				  @brd_w-btn ) {
 
 	width: @w-btn;
@@ -105,4 +106,5 @@
 	padding: @pd_vert-btn @pd_horiz-btn;
 
 	font-size: @f_sz-btn;
+	line-height: @lh-btn - ( (@pd_vert-btn + @brd_w-btn) * 2 );
 }

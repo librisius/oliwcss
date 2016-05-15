@@ -1,4 +1,4 @@
-._mx_valign_line( @item: ~'.item';
+._mx_valign_line( @item: ~'.-ol-item';
 				  @h: 100%;
 				  @lh: @line-height-base;
 				  @h-lh: @h ) {
@@ -13,7 +13,7 @@
 	}
 }
 
-._mx_valign_table( @item: ~'.item';
+._mx_valign_table( @item: ~'.-ol-item';
 				   @w: 100%;
 				   @h: 100% ) {
 	
@@ -30,7 +30,7 @@
 // !! @recovery variable is needed if you don't want to have inline style
 // for some children elements
 // !! @display variable is needed if you want to have inline-table
-._mx_inline( @item: ~'.item';
+._mx_inline( @item: ~'.-ol-item';
 			 @font-size: @font-size-base;
 			 @valign: top;
 			 @recovery: ~'._recovery';
@@ -57,7 +57,7 @@
 // !! @recovery variable is needed if you don't want to have inline style
 // for some children elements
 // !! @display variable is needed if you want to have inline-table
-._mx_inline_none( @item: ~'.item';
+._mx_inline_none( @item: ~'.-ol-item';
 				  @recovery: ~'._recovery';
 				  @display: inline-block ) {
 
@@ -94,7 +94,7 @@
 // !! @recovery variable is needed if you don't want to have inline style
 // for some children elements
 // !! @display variable is needed if you want to have inline-table
-._mx_justify( @item: ~'.item';
+._mx_justify( @item: ~'.-ol-item';
 			  @font-size: @font-size-base;
 			  @valign: top;
 			  @recovery: ~'._recovery';
@@ -146,7 +146,7 @@
 	}
 }
 
-._mx_to-vert( @item: ~'.item';
+._mx_to-vert( @item: ~'.-ol-item';
 			  @w: 100%;
 			  @major: ~'._major' ) {
 
@@ -164,7 +164,7 @@
 	}
 }
 
-._mx_to-horiz( @item: ~'.item';
+._mx_to-horiz( @item: ~'.-ol-item';
 			   @valign: top;
 			   @w: 100%;
 			   @major: ~'._major' ) {

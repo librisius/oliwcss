@@ -66,6 +66,10 @@
 @h-min:							 768px;
 @img: 							 '../../media/img';
 
+@m-col: 						 20px;
+@w-col: 						 60px;
+@w_full-col:					 @w-col + @m-col;
+
 /*----------- common (end) -----------*/
 
 
@@ -106,8 +110,8 @@
 
 /*----------- hr -----------*/
 
-@h-hr:							 1px;
 @w-hr:							 100%;
+@h-hr:							 1px;
 
 /*----------- hr (end) -----------*/
 
@@ -128,8 +132,9 @@
 
 /*----------- form -----------*/
 
-@disp-label: 					 inline-block;
 @mb-label: 						 0px;
+@f_sz-label:					 @font-size-base;
+@f_w-label:						 700;
 
 @h-input:						 34px;
 @h-textarea:					 74px;
@@ -140,6 +145,7 @@
 @pd_vert-input:					 6px;
 @pd_horiz-input:				 12px;
 
+@m-col-input:					 @m-col;
 @m-row-input:					 10px;
 @m-form-body:					 @m-row-input*2;
 
@@ -215,6 +221,10 @@
 @h-btn_xs: 						 auto;
 
 @brd_w-btn: 					 1px;
+@brd_w-btn_lg: 					 2px;
+@brd_w-btn_sm: 					 1px;
+@brd_w-btn_xs: 					 1px;
+
 @brd_rd-btn:					 4px;
 @brd_rd-btn_lg:					 6px;
 @brd_rd-btn_sm:					 3px;
