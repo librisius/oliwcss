@@ -52,17 +52,24 @@
 	}
 }
 
+._mx_e-p(@rules) {
+
+	p, .-ol-p {
+		@rules();
+	}
+}
+
 ._mx_e-btns(@rules) {
 
-	.btn,
-	.btn-link,
-	.btn-outline,
-	.btn-default,
-	.btn-primary,
-	.btn-success,
-	.btn-info,
-	.btn-warning,
-	.btn-danger {
+	.-ol-btn,
+	.-ol-btn-link,
+	.-ol-btn-outline,
+	.-ol-btn-default,
+	.-ol-btn-primary,
+	.-ol-btn-success,
+	.-ol-btn-info,
+	.-ol-btn-warning,
+	.-ol-btn-danger {
 		@rules();
 	}
 }

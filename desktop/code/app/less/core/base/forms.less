@@ -17,8 +17,7 @@
 	font-size: @fsz-input;
 	line-height: @h-input - @brd-input * 2 - @pd_vert-input * 2;
 
-	._mx_placeholder(@placeholder, transparent, ellipsis);
-}
+	._mx_placeholder(@placeholder; transparent; @placeholder; @overflow: ellipsis);}
 
 .-ol-input {
 	height: @h-input;
@@ -82,19 +81,20 @@
 
 				.-ol-input,
 				.jq-selectbox {
-					border-color: @c-form-error;
+					border-color: @brd_c-form-error;
+					color: @c-form-error;
 				}
 
 				.jq-selectbox {
 
 					&__select {
-						border-color: @c-form-error;
+						border-color: @brd_c-form-error;
 					}
 
 					&__trigger {
 
 						&:before {
-							background-color: @c-form-error;
+							background-color: @brd_c-form-error;
 						}
 					}
 				}
@@ -102,7 +102,9 @@
 		}
 
 .-ol-input-file {
+	position: relative;
 	overflow: hidden;
+	width: 100%;
 
 	input {
 		@h-input-file: 100%;
@@ -116,7 +118,6 @@
 		z-index: 3;
 
 		opacity: 0;
-		padding: @h-input-file;
 
 		cursor: pointer;
 	}

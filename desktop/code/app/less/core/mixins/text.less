@@ -1,17 +1,29 @@
 ._mx_text-ellipsis() {
+	// don'd add width: 100%; here
+	// otherwise .jq-selectbox will have width: 100%;
+	// found this bug for IE 9 for win 7
+
 	display: block;
 
 	overflow: hidden;
 
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	word-wrap: normal; // to set html { word-wrap: break-word; } for IE >= 10
+	// this but can't reproduce on IE simulator just on real machine
 }
 
 ._mx_text-clip() {
+	// don'd add width: 100%; here
+	// otherwise .jq-selectbox will have width: 100%;
+	// found this bug for IE 9 for win 7
+
 	display: block;
 
 	overflow: hidden;
 
 	text-overflow: clip;
 	white-space: nowrap;
+	word-wrap: normal; // to set html { word-wrap: break-word; } for IE >= 10
+	// this but can't reproduce on IE simulator just on real machine
 }

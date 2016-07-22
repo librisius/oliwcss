@@ -1,20 +1,21 @@
 ._mx_btn-variant( @c-btn;
-				  @c-btn_hover) {
-	
-	@brd-btn: @c-btn;
+				  @c-btn_hover;
+				  @per-btn_hover: @per-btn_hover;
+				  @brd_c-btn: @c-btn; ) {
 
-	border-color: @brd-btn;
+	border-color: @brd_c-btn;
 	background-color: transparent;
 	color: @c-btn;
 
 	&:hover {
-		border-color: @brd-btn;
+		border-color: @brd_c-btn;
 		background-color: @c-btn;
 		color: @c-btn_hover;
 	}
 
 	&:active {
-		opacity: .8;
+		border-color: lighten(@brd_c-btn, @per-btn_active);
+		background-color: lighten(@c-btn, @per-btn_active);
 	}
 }
 
@@ -22,8 +23,8 @@
 
 ._mx_btn-default-variant( @c-btn;
 						  @bg-btn;
-						  @per-hover;
-						  @per-active;
+						  @per-btn_hover: @per-btn_hover;
+						  @per-btn_active: @per-btn_active;
 						  @brd_c-btn: @c-btn ) {
 
 	border-color: @brd_c-btn;
@@ -31,14 +32,14 @@
 	color: @c-btn;
 
 	&:hover {
-		border-color: lighten(@brd_c-btn, @per-hover);
-		background-color: lighten(@bg-btn, @per-hover);
+		border-color: lighten(@brd_c-btn, @per-btn_hover);
+		background-color: lighten(@bg-btn, @per-btn_hover);
 		color: @c-btn;
 	}
 
 	&:active {
-		border-color: lighten(@brd_c-btn, @per-hover + @per-active);
-		background-color: lighten(@bg-btn, @per-hover + @per-active);
+		border-color: lighten(@brd_c-btn, @per-btn_hover + @per-btn_active);
+		background-color: lighten(@bg-btn, @per-btn_hover + @per-btn_active);
 	}
 }
 
@@ -64,24 +65,23 @@
 ._mx_btn-filled-variant( @c-btn;
 						 @bg-btn;
 						 @per-brd;
-						 @per-hover;
-						 @per-active ) {
+						 @per-btn_hover: @per-btn_hover;
+						 @per-btn_active: @per-btn_active;
+						 @brd_c-btn: darken(@bg-btn, @per-brd); ) {
 
-	@brd-btn: darken(@bg-btn, @per-brd);
-
-	border-color: @brd-btn;
+	border-color: @brd_c-btn;
 	background-color: @bg-btn;
 	color: @c-btn;
 
 	&:hover {
-		border-color: lighten(@brd-btn, @per-hover);
-		background-color: lighten(@bg-btn, @per-hover);
+		border-color: lighten(@brd_c-btn, @per-btn_hover);
+		background-color: lighten(@bg-btn, @per-btn_hover);
 		color: @c-btn;
 	}
 
 	&:active {
-		border-color: darken(@brd-btn, @per-active);
-		background-color: darken(@bg-btn, @per-active);
+		border-color: darken(@brd_c-btn, @per-btn_active);
+		background-color: darken(@bg-btn, @per-btn_active);
 		color: @c-btn;
 	}
 }
@@ -89,14 +89,14 @@
 
 
 // Button sizes
-._mx_button-size( @w-btn;
-				  @h-btn;
-				  @brd_rd-btn;
-				  @pd_vert-btn;
-				  @pd_horiz-btn;
-				  @f_sz-btn;
-				  @lh-btn;
-				  @brd_w-btn ) {
+._mx_btn-size( @w-btn;
+			   @h-btn;
+			   @brd_rd-btn;
+			   @pd_vert-btn;
+			   @pd_horiz-btn;
+			   @f_sz-btn;
+			   @lh-btn;
+			   @brd_w-btn ) {
 
 	width: @w-btn;
 	height: @h-btn;
@@ -106,5 +106,5 @@
 	padding: @pd_vert-btn @pd_horiz-btn;
 
 	font-size: @f_sz-btn;
-	line-height: @lh-btn - ( (@pd_vert-btn + @brd_w-btn) * 2 );
+	line-height: @lh-btn;
 }

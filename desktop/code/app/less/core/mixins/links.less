@@ -4,15 +4,15 @@
 	@color_hover: @c-link_hover;
 	@border_hover: @brd-c-link_hover ) {
 
-	display: inline-block;
+	display: inline;
 	border-bottom: @brd_w-link solid @border;
 
-	color: @color;
-	line-height: @lh-link;
+	color: @color !important;
+	line-height: inherit;
 	cursor: pointer;
 
 	&:hover {
 		border-bottom-color: @border_hover;
-		color: @color_hover;
+		color: @color_hover !important;
 	}
 }

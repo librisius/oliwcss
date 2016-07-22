@@ -1,0 +1,19 @@
+._mx_m-collapse_brd( @m_t: 0;
+					 @m_r: 0;
+					 @m_b: 0;
+					 @m_l: 0; ) {
+	border: @brd_w solid transparent;
+	margin: (@m_t - @brd_w) (@m_r - @brd_w) (@m_b - @brd_w) (@m_l - @brd_w);
+}
+
+._mx_m-collapse_disp( @item: ~'.item';
+					  @w: 100%;
+					  @font-size: @font-size-base; ) {
+	line-height: 0;
+
+	& > @{item} {
+		display: inline-block;
+		width: @w;
+		font-size: @font-size;
+	}
+}

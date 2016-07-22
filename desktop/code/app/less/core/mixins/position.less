@@ -166,8 +166,28 @@
 
 ._mx_to-horiz( @item: ~'.-ol-item';
 			   @valign: top;
+			   @w;
+			   @major: ~'._major' ) when (@w = none) {
+
+	display: table;
+	height: 100%;
+
+	> @{item} {
+		display: ~'table-cell';
+		vertical-align: @valign; // without this value
+		// there is an error in FF and IE
+		// looks like baseline
+	}
+
+	> @{major} {
+		width: 100%;
+	}
+}
+
+._mx_to-horiz( @item: ~'.-ol-item';
+			   @valign: top;
 			   @w: 100%;
-			   @major: ~'._major' ) {
+			   @major: ~'._major' ) when ( isnumber(@w) ) {
 
 	display: table;
 	width: @w;

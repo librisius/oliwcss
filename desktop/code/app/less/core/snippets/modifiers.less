@@ -1,30 +1,30 @@
 ._mb-none {
-	display: inline !important;
+	display: block !important;
 
-	&._block {
-		display: block !important;
+	._mx_md-mobile({
+		display: none !important;
+	});
+
+	&._inline {
+		display: inline !important;
 
 		._mx_md-mobile({
 			display: none !important;
 		});
 	}
-
-	._mx_md-mobile({
-		display: none !important;
-	});
 }
 
 ._mb-only {
 	display: none !important;
 
 	._mx_md-mobile({
-		display: inline !important;
+		display: block !important;
 	});
 
-	&._block {
+	&._inline {
 
 		._mx_md-mobile({
-			display: block !important;
+			display: inline !important;
 		});
 	}
 }

@@ -2,28 +2,33 @@
 				  @color_focus: transparent;
 				  @color_hover: @c-text-base;
 				  @fw: inherit;
-				  @lts: inherit;
-				  @overflow: ellipsis ) {
+				  @lts: @lts;
+				  @overflow: ellipsis;
+				  @opacity: 1 ) {
 
 	&::-webkit-input-placeholder {
+		opacity: @opacity;
 		color: @color;
 		font-weight: @fw;
 		letter-spacing: @lts;
 	}
 
 	&::-moz-placeholder {
+		opacity: @opacity;
 		color: @color;
 		font-weight: @fw;
 		letter-spacing: @lts;
 	}
 
 	&:-moz-placeholder {
+		opacity: @opacity;
 		color: @color;
 		font-weight: @fw;
 		letter-spacing: @lts;
 	}
 
 	&:-ms-input-placeholder {
+		opacity: @opacity;
 		color: @color;
 		font-weight: @fw;
 		letter-spacing: @lts;
@@ -34,25 +39,29 @@
 
 
 	&:hover::-webkit-input-placeholder {
+		opacity: @opacity;
 		color: @color_hover;
 		font-weight: @fw;
 		letter-spacing: @lts;
 	}
 
 	&:hover::-moz-placeholder {
+		opacity: @opacity;
 		color: @color_hover;
 		font-weight: @fw;
 		letter-spacing: @lts;
 	}
 
 	&:hover:-moz-placeholder {
+		opacity: @opacity;
 		color: @color_hover;
 		font-weight: @fw;
 		letter-spacing: @lts;
 	}
 
 	&:hover:-ms-input-placeholder {
-		color: @color_focus;
+		opacity: @opacity;
+		color: @color_hover;
 		font-weight: @fw;
 		letter-spacing: @lts;
 	}
@@ -62,24 +71,28 @@
 
 
 	&:focus::-webkit-input-placeholder {
+		opacity: @opacity;
 		color: @color_focus;
 		font-weight: @fw;
 		letter-spacing: @lts;
 	}
 
 	&:focus::-moz-placeholder {
+		opacity: @opacity;
 		color: @color_focus;
 		font-weight: @fw;
 		letter-spacing: @lts;
 	}
 
 	&:focus:-moz-placeholder {
+		opacity: @opacity;
 		color: @color_focus;
 		font-weight: @fw;
 		letter-spacing: @lts;
 	}
 
 	&:focus:-ms-input-placeholder {
+		opacity: @opacity;
 		color: @color_focus;
 		font-weight: @fw;
 		letter-spacing: @lts;

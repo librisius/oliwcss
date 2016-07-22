@@ -133,3 +133,17 @@ mark {
 
 	color: inherit;
 }
+
+/* remove indent in Firefox */
+@-moz-document url-prefix() {
+
+	button::-moz-focus-inner,
+	input[type="reset"]::-moz-focus-inner,
+	input[type="button"]::-moz-focus-inner,
+	input[type="submit"]::-moz-focus-inner,
+	input[type="file"] > input[type="button"]::-moz-focus-inner {
+		margin: 0;
+		border: 0;
+		padding: 0;
+	}
+}

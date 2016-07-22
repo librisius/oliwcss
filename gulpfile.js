@@ -1,17 +1,17 @@
-var gulp 			= require('gulp'),
+var gulp 					= require('gulp'),
 
-	sourcemaps 		= require('gulp-sourcemaps'),
-	rename 			= require("gulp-rename"),
+	sourcemaps 				= require('gulp-sourcemaps'),
+	rename 					= require("gulp-rename"),
 
-	less 			= require('gulp-less'),
+	less 					= require('gulp-less'),
 
-	autoprefixer 	= require('gulp-autoprefixer'),
-	cssnano			= require('gulp-cssnano'),
-	uncss 			= require('gulp-uncss'),
+	postcss					= require('gulp-postcss'),
+	autoprefixer_postcss	= require('autoprefixer'),
+	cssnano_postcss			= require('cssnano'),
 
-	jade 			= require('gulp-jade'),
+	jade 					= require('gulp-jade'),
 
-	uglify 			= require('gulp-uglify');
+	uglify 					= require('gulp-uglify');
 
 
 
@@ -37,27 +37,21 @@ gulp.task('html', function() {
 
 	html([
 		'desktop/code/app/jade/**/*.jade',
-		'!desktop/code/app/jade/extends/**/*.jade',
-		'!desktop/code/app/jade/includes/**/*.jade',
-		'!desktop/code/app/jade/mixins/**/*.jade' ], 'desktop/code/');
+		'!desktop/code/app/jade/includes/**/*.jade' ], 'desktop/code/');
 });
 
 gulp.task('html_tb', function() {
 
 	html([
 		'tablet/code/app/jade/**/*.jade',
-		'!tablet/code/app/jade/extends/**/*.jade',
-		'!tablet/code/app/jade/includes/**/*.jade',
-		'!tablet/code/app/jade/mixins/**/*.jade' ], 'tablet/code/');
+		'!tablet/code/app/jade/includes/**/*.jade' ], 'tablet/code/');
 });
 
 gulp.task('html_mb', function() {
 
 	html([
 		'mobile/code/app/jade/**/*.jade',
-		'!mobile/code/app/jade/extends/**/*.jade',
-		'!mobile/code/app/jade/includes/**/*.jade',
-		'!mobile/code/app/jade/mixins/**/*.jade' ], 'mobile/code/');
+		'!mobile/code/app/jade/includes/**/*.jade' ], 'mobile/code/');
 });
 
 
@@ -102,6 +96,7 @@ gulp.task('default', ['watch']);
 
 
 function css(from, to) {
+
 	gulp.src(from)
 
 		.pipe (
@@ -112,17 +107,19 @@ function css(from, to) {
 			less()
 		)
 
-		.pipe (
-			autoprefixer ({
-				browsers: ['> 1%', 'IE 9'],
-				cascade: false
-			})
-		)
+		.pipe(
+			postcss([
+				autoprefixer_postcss({
+					browsers: ['> 1%', 'IE 9'],
+					remove: false,
+					cascade: false
+				}),
 
-		.pipe (
-			cssnano({
-				zindex: false
-			})
+				cssnano_postcss({
+					zindex: false
+				})
+
+			])
 		)
 
 		.pipe (
@@ -132,7 +129,7 @@ function css(from, to) {
 		)
 
 		.pipe (
-			sourcemaps.write()
+			sourcemaps.write('./')
 		)
 
 		.pipe(
