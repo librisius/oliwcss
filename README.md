@@ -78,34 +78,34 @@ less/
 Главный раздел фреймворка - mixins. На его изучение будет возможно потрачено не мало времени, которое в последствии окупится. Тут содержатся миксины как от создателя oliwcss так и частично других фреймворков. Миксины позволяют не только стилизовать блоки быстрее, но и забыть о багах при верном их использовании.
 #### buttons
 ##### ._mx_btn-variant()
-Параметры:  
-@c-btn  
-@c-btn_hover  
-@per-btn_hover: @per-btn_hover  
-@brd_c-btn: @c-btn
+###### Параметры:  
+* @c-btn  
+* @c-btn_hover  
+* @per-btn_hover: @per-btn_hover  
+* @brd_c-btn: @c-btn
 ##### ._mx_btn-default-variant()
-Параметры:  
-@c-btn  
-@bg-btn  
-@per-btn_hover: @per-btn_hover  
-@per-btn_active: @per-btn_active  
-@brd_c-btn: @c-btn
+###### Параметры:  
+* @c-btn  
+* @bg-btn  
+* @per-btn_hover: @per-btn_hover  
+* @per-btn_active: @per-btn_active  
+* @brd_c-btn: @c-btn
 ##### ._mx_btn-link()
 Параметры:  
-@brd-b-c-btn  
-@c-btn  
-@brd-b-c-btn_hover  
-@c-btn_hover
+* @brd-b-c-btn  
+* @c-btn  
+* @brd-b-c-btn_hover  
+* @c-btn_hover
 ##### ._mx_btn-filled-variant()
-Параметры:  
-@c-btn  
-@bg-btn 
-@per-brd  
-@per-btn_hover: @per-btn_hover  
-@per-btn_active: @per-btn_active  
-@brd_c-btn: darken(@bg-btn, @per-brd); 
+###### Параметры:  
+* @c-btn  
+* @bg-btn 
+* @per-brd  
+* @per-btn_hover: @per-btn_hover  
+* @per-btn_active: @per-btn_active  
+* @brd_c-btn: darken(@bg-btn, @per-brd); 
 ##### ._mx_btn-size()
-Параметры:  
+###### Параметры:  
 @w-btn  
 @h-btn  
 @brd_rd-btn  
