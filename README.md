@@ -90,13 +90,16 @@ less/
 * @per-btn_hover: @per-btn_hover  
 * @per-btn_active: @per-btn_active  
 * @brd_c-btn: @c-btn
+
 ##### ._mx_btn-link()
 Параметры:  
 * @brd-b-c-btn  
 * @c-btn  
 * @brd-b-c-btn_hover  
 * @c-btn_hover
+
 ##### ._mx_btn-filled-variant()
+
 ###### Параметры:  
 * @c-btn  
 * @bg-btn 
@@ -104,7 +107,9 @@ less/
 * @per-btn_hover: @per-btn_hover  
 * @per-btn_active: @per-btn_active  
 * @brd_c-btn: darken(@bg-btn, @per-brd); 
+
 ##### ._mx_btn-size()
+
 ###### Параметры:  
 @w-btn  
 @h-btn  
@@ -115,7 +120,9 @@ less/
 @lh-btn  
 @brd_w-btn  
 #### center
+
 ##### ._mx_center()
+
 ##### ._mx_center-pos()
 Параметры:  
 @w  
