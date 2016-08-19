@@ -66,41 +66,39 @@ less/
 └── fonts.less
 ```
 
-## Разбор фреймворка oliwcss
-
-### base
+## Разбор фреймворка oliwcss (base)
 Фреймворк содержит в себе малозначительный раздел базовых стилей проекта. Малозначительный он в первую очередь, потому что фреймворк разчитан на использование функциональной части (миксинов), как уже было сказано выше.
 
 Данный раздел может помочь если вам необходимо использовать какие-то стили по умолчанию, без специфического дизайна. Но не смотря на это все параметры этой папки легко редактируемы! Для редактирования базовых стилей наобходимо задавать/изменять значения переменным в папке settings.
 
 <a href="http://oliwlife.ru/works/libris/oliwcss/" target="_blank"><b>Демо</b></a> некоторых базовых стилей с базовыми настройками
-### mixins
+## Разбор фреймворка oliwcss (mixins)
 Главный раздел фреймворка - mixins. На его изучение будет возможно потрачено не мало времени, которое в последствии окупится. Тут содержатся миксины как от создателя oliwcss так и частично других фреймворков. Миксины позволяют не только стилизовать блоки быстрее, но и забыть о багах при верном их использовании.
-#### buttons
-##### ._mx_btn-variant()
-###### Параметры:  
+### buttons
+#### ._mx_btn-variant()
+##### Параметры:  
 * @c-btn  
 * @c-btn_hover  
 * @per-btn_hover: @per-btn_hover  
 * @brd_c-btn: @c-btn
-##### ._mx_btn-default-variant()
-###### Параметры:  
+#### ._mx_btn-default-variant()
+##### Параметры:  
 * @c-btn  
 * @bg-btn  
 * @per-btn_hover: @per-btn_hover  
 * @per-btn_active: @per-btn_active  
 * @brd_c-btn: @c-btn
 
-##### ._mx_btn-link()
+#### ._mx_btn-link()
 Параметры:  
 * @brd-b-c-btn  
 * @c-btn  
 * @brd-b-c-btn_hover  
 * @c-btn_hover
 
-##### ._mx_btn-filled-variant()
+#### ._mx_btn-filled-variant()
 
-###### Параметры:  
+##### Параметры:  
 * @c-btn  
 * @bg-btn 
 * @per-brd  
@@ -108,9 +106,9 @@ less/
 * @per-btn_active: @per-btn_active  
 * @brd_c-btn: darken(@bg-btn, @per-brd); 
 
-##### ._mx_btn-size()
+#### ._mx_btn-size()
 
-###### Параметры:  
+##### Параметры:  
 @w-btn  
 @h-btn  
 @brd_rd-btn  
@@ -119,67 +117,67 @@ less/
 @f_sz-btn  
 @lh-btn  
 @brd_w-btn  
-#### center
+### center
 
-##### ._mx_center()
+#### ._mx_center()
 
-##### ._mx_center-pos()
+#### ._mx_center-pos()
 Параметры:  
 @w  
 @h  
 @t: 50%  
 @l: 50%  
 Параметры:
-##### ._mx_center-pos_min()
+#### ._mx_center-pos_min()
 Параметры:  
 @w  
 @h  
-##### ._mx_center-pos_xm()
+#### ._mx_center-pos_xm()
 Параметры:  
 @w  
 @h
-##### ._mx_center-tsf()
-##### ._mx_center-tsf_x()
-##### ._mx_center-tsf_y()
-#### elements
-##### ._mx_e-headings()
-##### ._mx_e-h1()
-##### ._mx_e-h2()
-##### ._mx_e-h3()
-##### ._mx_e-h4()
-##### ._mx_e-h5()
-##### ._mx_e-h6()
-##### ._mx_e-p()
-##### ._mx_e-b()
-##### ._mx_e-btns()
-#### float
-##### ._mx_float()
+#### ._mx_center-tsf()
+#### ._mx_center-tsf_x()
+#### ._mx_center-tsf_y()
+### elements
+#### ._mx_e-headings()
+#### ._mx_e-h1()
+#### ._mx_e-h2()
+#### ._mx_e-h3()
+#### ._mx_e-h4()
+#### ._mx_e-h5()
+#### ._mx_e-h6()
+#### ._mx_e-p()
+#### ._mx_e-b()
+#### ._mx_e-btns()
+### float
+#### ._mx_float()
 Параметры:  
 @item: ~'.-ol-item'
-##### ._mx_float-r()
+#### ._mx_float-r()
 Параметры:  
 @item: ~'.-ol-item'
-##### ._mx_float-justify()
+#### ._mx_float-justify()
 Параметры:  
 @item: ~'.-ol-item'
-#### gradients
+### gradients
 Устаревший!
-#### grid
-##### ._mx_grid()
+### grid
+#### ._mx_grid()
 Параметры:  
 @padding  
 @rows 
 @counter: 1
-#### images
-#### links
-#### lists
-#### media
-#### placeholder
-#### position
-#### retina
-#### sprites
-#### text
-### settings
+### images
+### links
+### lists
+### media
+### placeholder
+### position
+### retina
+### sprites
+### text
+## settings
 Настройки делятся на две части colors и options. Отделение файла цветов произошло в виду исторических причин.
-### snippets
+## snippets
 В разделе snippets собраны стили для частоиспользуемых элементов, которые не вошли в раздел base в виду отсутствия одноименных тегов. Это просто частоиспользуемые стили.
