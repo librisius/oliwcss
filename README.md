@@ -74,14 +74,19 @@ less/
 <a href="http://oliwlife.ru/works/libris/oliwcss/" target="_blank"><b>Демо</b></a> некоторых базовых стилей с базовыми настройками
 ## Разбор фреймворка oliwcss (mixins)
 Главный раздел фреймворка - mixins. На его изучение будет возможно потрачено не мало времени, которое в последствии окупится. Тут содержатся миксины как от создателя oliwcss так и частично других фреймворков. Миксины позволяют не только стилизовать блоки быстрее, но и забыть о багах при верном их использовании.
+
 ### buttons
+
 #### ._mx_btn-variant()
+
 ##### Параметры:  
 * @c-btn  
 * @c-btn_hover  
 * @per-btn_hover: @per-btn_hover  
 * @brd_c-btn: @c-btn
+
 #### ._mx_btn-default-variant()
+
 ##### Параметры:  
 * @c-btn  
 * @bg-btn  
@@ -126,58 +131,100 @@ less/
 @w  
 @h  
 @t: 50%  
-@l: 50%  
-Параметры:
+@l: 50%
+
 #### ._mx_center-pos_min()
-Параметры:  
-@w  
-@h  
-#### ._mx_center-pos_xm()
+
 Параметры:  
 @w  
 @h
+
+#### ._mx_center-pos_xm()
+
+Параметры:  
+@w  
+@h
+
 #### ._mx_center-tsf()
+
 #### ._mx_center-tsf_x()
+
 #### ._mx_center-tsf_y()
+
 ### elements
+
 #### ._mx_e-headings()
+
 #### ._mx_e-h1()
+
 #### ._mx_e-h2()
+
 #### ._mx_e-h3()
+
 #### ._mx_e-h4()
+
 #### ._mx_e-h5()
+
 #### ._mx_e-h6()
+
 #### ._mx_e-p()
+
 #### ._mx_e-b()
+
 #### ._mx_e-btns()
+
 ### float
+
 #### ._mx_float()
+
 Параметры:  
 @item: ~'.-ol-item'
+
 #### ._mx_float-r()
+
 Параметры:  
 @item: ~'.-ol-item'
+
 #### ._mx_float-justify()
+
 Параметры:  
 @item: ~'.-ol-item'
+
 ### gradients
+
 Устаревший!
+
 ### grid
+
 #### ._mx_grid()
+
 Параметры:  
 @padding  
 @rows 
 @counter: 1
+
 ### images
+
 ### links
+
 ### lists
+
 ### media
+
 ### placeholder
+
 ### position
+
 ### retina
+
 ### sprites
+
 ### text
+
 ## settings
+
 Настройки делятся на две части colors и options. Отделение файла цветов произошло в виду исторических причин.
+
 ## snippets
+
 В разделе snippets собраны стили для частоиспользуемых элементов, которые не вошли в раздел base в виду отсутствия одноименных тегов. Это просто частоиспользуемые стили.
