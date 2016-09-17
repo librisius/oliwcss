@@ -5,7 +5,7 @@
 
 	td,
 	th {
-		padding: @pd_vert-td @pd_horiz-td;
+		padding: @p_vert-td @p_horiz-td;
 
 		vertical-align: middle;
 	}
@@ -21,7 +21,7 @@
 
 	&_even {
 
-		&:extend(.table all);
+		&:extend(.-ol-table all);
 
 		tbody {
 
@@ -33,7 +33,7 @@
 
 	&_odd {
 
-		&:extend(.table all);
+		&:extend(.-ol-table all);
 
 		tbody {
 

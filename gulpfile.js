@@ -144,6 +144,8 @@ function html(from, to) {
 		.pipe (
 			jade({
 				pretty: true
+			}).on('error', function (error) {
+				console.error('' + error);
 			})
 		)
 
